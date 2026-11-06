@@ -1,0 +1,2402 @@
+[
+  {
+    "customer_id":"C0000",
+    "signup_date":"2023-10-11",
+    "phone":"+54 351 5550000",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0001",
+    "signup_date":"2024-09-08",
+    "phone":"+54 351 5550001",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0002",
+    "signup_date":"2025-11-07",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0003",
+    "signup_date":"2024-03-27",
+    "phone":"+54 351 5550003",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0004",
+    "signup_date":"2023-10-15",
+    "phone":"+54 351 5550004",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0005",
+    "signup_date":"2023-09-10",
+    "phone":"+54 351 5550005",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0006",
+    "signup_date":"2025-05-31",
+    "phone":"+54 351 5550006",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0007",
+    "signup_date":"2023-07-21",
+    "phone":"+54 351 5550007",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0008",
+    "signup_date":"2025-03-06",
+    "phone":"+54 351 5550008",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0009",
+    "signup_date":"2023-10-30",
+    "phone":"+54 351 5550009",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0010",
+    "signup_date":"2024-10-09",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0011",
+    "signup_date":"2024-01-31",
+    "phone":"+54 351 5550011",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0012",
+    "signup_date":"2024-05-26",
+    "phone":"+54 351 5550012",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0013",
+    "signup_date":"2024-10-01",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0014",
+    "signup_date":"2023-09-26",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0015",
+    "signup_date":"2024-07-07",
+    "phone":"+54 351 5550015",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0016",
+    "signup_date":"2023-10-08",
+    "phone":"+54 351 5550016",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0017",
+    "signup_date":"2025-11-18",
+    "phone":"+54 351 5550017",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0018",
+    "signup_date":"2025-04-24",
+    "phone":"+54 351 5550018",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0019",
+    "signup_date":"2023-11-08",
+    "phone":"+54 351 5550019",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0020",
+    "signup_date":"2025-04-22",
+    "phone":"+54 351 5550020",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0021",
+    "signup_date":"2024-05-04",
+    "phone":"+54 351 5550021",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0022",
+    "signup_date":"2025-08-08",
+    "phone":"+54 351 5550022",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0023",
+    "signup_date":"2024-06-08",
+    "phone":"+54 351 5550023",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0024",
+    "signup_date":"2024-11-03",
+    "phone":"+54 351 5550024",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0025",
+    "signup_date":"2024-08-17",
+    "phone":"+54 351 5550025",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0026",
+    "signup_date":"2025-09-13",
+    "phone":"+54 351 5550026",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0027",
+    "signup_date":"2024-07-20",
+    "phone":"+54 351 5550027",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0028",
+    "signup_date":"2024-01-08",
+    "phone":"+54 351 5550028",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0029",
+    "signup_date":"2024-04-02",
+    "phone":"+54 351 5550029",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0030",
+    "signup_date":"2023-12-08",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0031",
+    "signup_date":"2024-10-02",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0032",
+    "signup_date":"2024-05-09",
+    "phone":"+54 351 5550032",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0033",
+    "signup_date":"2023-07-22",
+    "phone":"+54 351 5550033",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0034",
+    "signup_date":"2024-03-09",
+    "phone":"+54 351 5550034",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0035",
+    "signup_date":"2025-07-17",
+    "phone":"+54 351 5550035",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0036",
+    "signup_date":"2025-11-03",
+    "phone":"+54 351 5550036",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0037",
+    "signup_date":"2025-01-11",
+    "phone":"+54 351 5550037",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0038",
+    "signup_date":"2024-10-17",
+    "phone":"+54 351 5550038",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0039",
+    "signup_date":"2023-08-28",
+    "phone":"+54 351 5550039",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0040",
+    "signup_date":"2024-11-22",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0041",
+    "signup_date":"2025-05-12",
+    "phone":"+54 351 5550041",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0042",
+    "signup_date":"2024-10-18",
+    "phone":"+54 351 5550042",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0043",
+    "signup_date":"2025-05-30",
+    "phone":"+54 351 5550043",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0044",
+    "signup_date":"2025-08-21",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0045",
+    "signup_date":"2024-01-06",
+    "phone":"+54 351 5550045",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0046",
+    "signup_date":"2025-05-17",
+    "phone":"+54 351 5550046",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0047",
+    "signup_date":"2025-01-13",
+    "phone":"+54 351 5550047",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0048",
+    "signup_date":"2025-11-22",
+    "phone":"+54 351 5550048",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0049",
+    "signup_date":"2025-01-17",
+    "phone":"+54 351 5550049",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0050",
+    "signup_date":"2024-02-29",
+    "phone":"+54 351 5550050",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0051",
+    "signup_date":"2025-10-09",
+    "phone":"+54 351 5550051",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0052",
+    "signup_date":"2024-11-16",
+    "phone":"+54 351 5550052",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0053",
+    "signup_date":"2023-11-08",
+    "phone":"+54 351 5550053",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0054",
+    "signup_date":"2024-10-27",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0055",
+    "signup_date":"2025-09-26",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0056",
+    "signup_date":"2025-04-07",
+    "phone":"+54 351 5550056",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0057",
+    "signup_date":"2023-07-21",
+    "phone":"+54 351 5550057",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0058",
+    "signup_date":"2025-10-18",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0059",
+    "signup_date":"2023-12-14",
+    "phone":"+54 351 5550059",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0060",
+    "signup_date":"2024-03-30",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0061",
+    "signup_date":"2024-07-22",
+    "phone":"+54 351 5550061",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0062",
+    "signup_date":"2025-02-20",
+    "phone":"+54 351 5550062",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0063",
+    "signup_date":"2024-05-11",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0064",
+    "signup_date":"2023-07-14",
+    "phone":"+54 351 5550064",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0065",
+    "signup_date":"2024-02-27",
+    "phone":"+54 351 5550065",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0066",
+    "signup_date":"2025-08-15",
+    "phone":"+54 351 5550066",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0067",
+    "signup_date":"2024-06-10",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0068",
+    "signup_date":"2025-01-15",
+    "phone":"+54 351 5550068",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0069",
+    "signup_date":"2025-12-14",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0070",
+    "signup_date":"2024-06-04",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0071",
+    "signup_date":"2023-09-30",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0072",
+    "signup_date":"2024-07-01",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0073",
+    "signup_date":"2024-09-27",
+    "phone":"+54 351 5550073",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0074",
+    "signup_date":"2024-08-31",
+    "phone":"+54 351 5550074",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0075",
+    "signup_date":"2024-11-20",
+    "phone":"+54 351 5550075",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0076",
+    "signup_date":"2025-08-14",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0077",
+    "signup_date":"2023-08-04",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0078",
+    "signup_date":"2024-01-22",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0079",
+    "signup_date":"2023-09-19",
+    "phone":"+54 351 5550079",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0080",
+    "signup_date":"2026-01-17",
+    "phone":"+54 351 5550080",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0081",
+    "signup_date":"2025-01-12",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0082",
+    "signup_date":"2025-11-18",
+    "phone":"+54 351 5550082",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0083",
+    "signup_date":"2024-07-22",
+    "phone":"+54 351 5550083",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0084",
+    "signup_date":"2023-07-02",
+    "phone":"+54 351 5550084",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0085",
+    "signup_date":"2024-07-24",
+    "phone":"+54 351 5550085",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0086",
+    "signup_date":"2025-01-16",
+    "phone":"+54 351 5550086",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0087",
+    "signup_date":"2023-10-14",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0088",
+    "signup_date":"2025-08-10",
+    "phone":"+54 351 5550088",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0089",
+    "signup_date":"2025-09-29",
+    "phone":"+54 351 5550089",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0090",
+    "signup_date":"2024-10-19",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0091",
+    "signup_date":"2025-06-02",
+    "phone":"+54 351 5550091",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0092",
+    "signup_date":"2024-08-05",
+    "phone":"+54 351 5550092",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0093",
+    "signup_date":"2025-06-29",
+    "phone":"+54 351 5550093",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0094",
+    "signup_date":"2025-01-06",
+    "phone":"+54 351 5550094",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0095",
+    "signup_date":"2023-12-09",
+    "phone":"+54 351 5550095",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0096",
+    "signup_date":"2024-01-18",
+    "phone":"+54 351 5550096",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0097",
+    "signup_date":"2024-03-26",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0098",
+    "signup_date":"2025-11-09",
+    "phone":"+54 351 5550098",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0099",
+    "signup_date":"2025-09-23",
+    "phone":"+54 351 5550099",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0100",
+    "signup_date":"2024-03-27",
+    "phone":"+54 351 5550100",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0101",
+    "signup_date":"2024-09-28",
+    "phone":"+54 351 5550101",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0102",
+    "signup_date":"2024-10-04",
+    "phone":"+54 351 5550102",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0103",
+    "signup_date":"2025-06-26",
+    "phone":"+54 351 5550103",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0104",
+    "signup_date":"2024-03-08",
+    "phone":"+54 351 5550104",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0105",
+    "signup_date":"2025-06-01",
+    "phone":"+54 351 5550105",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0106",
+    "signup_date":"2024-04-21",
+    "phone":"+54 351 5550106",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0107",
+    "signup_date":"2025-06-24",
+    "phone":"+54 351 5550107",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0108",
+    "signup_date":"2025-06-19",
+    "phone":"+54 351 5550108",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0109",
+    "signup_date":"2025-07-18",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0110",
+    "signup_date":"2024-06-02",
+    "phone":"+54 351 5550110",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0111",
+    "signup_date":"2025-11-25",
+    "phone":"+54 351 5550111",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0112",
+    "signup_date":"2023-08-22",
+    "phone":"+54 351 5550112",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0113",
+    "signup_date":"2025-08-30",
+    "phone":"+54 351 5550113",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0114",
+    "signup_date":"2026-01-07",
+    "phone":"+54 351 5550114",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0115",
+    "signup_date":"2024-02-02",
+    "phone":"+54 351 5550115",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0116",
+    "signup_date":"2025-08-02",
+    "phone":"+54 351 5550116",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0117",
+    "signup_date":"2024-01-04",
+    "phone":"+54 351 5550117",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0118",
+    "signup_date":"2024-07-14",
+    "phone":"+54 351 5550118",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0119",
+    "signup_date":"2024-11-04",
+    "phone":"+54 351 5550119",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0120",
+    "signup_date":"2023-08-10",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0121",
+    "signup_date":"2023-12-04",
+    "phone":"+54 351 5550121",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0122",
+    "signup_date":"2023-07-15",
+    "phone":"+54 351 5550122",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0123",
+    "signup_date":"2025-09-20",
+    "phone":"+54 351 5550123",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0124",
+    "signup_date":"2023-09-03",
+    "phone":"+54 351 5550124",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0125",
+    "signup_date":"2025-11-03",
+    "phone":"+54 351 5550125",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0126",
+    "signup_date":"2025-10-16",
+    "phone":"+54 351 5550126",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0127",
+    "signup_date":"2024-12-02",
+    "phone":"+54 351 5550127",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0128",
+    "signup_date":"2024-06-08",
+    "phone":"+54 351 5550128",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0129",
+    "signup_date":"2023-11-06",
+    "phone":"+54 351 5550129",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0130",
+    "signup_date":"2025-04-08",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0131",
+    "signup_date":"2024-10-14",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0132",
+    "signup_date":"2023-09-01",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0133",
+    "signup_date":"2023-11-16",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0134",
+    "signup_date":"2024-11-10",
+    "phone":"+54 351 5550134",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0135",
+    "signup_date":"2025-02-12",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0136",
+    "signup_date":"2024-07-26",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0137",
+    "signup_date":"2025-05-05",
+    "phone":"+54 351 5550137",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0138",
+    "signup_date":"2024-08-22",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0139",
+    "signup_date":"2024-04-14",
+    "phone":"+54 351 5550139",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0140",
+    "signup_date":"2024-07-13",
+    "phone":"+54 351 5550140",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0141",
+    "signup_date":"2025-08-11",
+    "phone":"+54 351 5550141",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0142",
+    "signup_date":"2024-11-01",
+    "phone":"+54 351 5550142",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0143",
+    "signup_date":"2024-02-16",
+    "phone":"+54 351 5550143",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0144",
+    "signup_date":"2023-08-10",
+    "phone":"+54 351 5550144",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0145",
+    "signup_date":"2023-07-28",
+    "phone":"+54 351 5550145",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0146",
+    "signup_date":"2023-11-12",
+    "phone":"+54 351 5550146",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0147",
+    "signup_date":"2024-01-17",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0148",
+    "signup_date":"2025-10-17",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0149",
+    "signup_date":"2025-08-18",
+    "phone":"+54 351 5550149",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0150",
+    "signup_date":"2026-01-15",
+    "phone":"+54 351 5550150",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0151",
+    "signup_date":"2023-08-02",
+    "phone":"+54 351 5550151",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0152",
+    "signup_date":"2023-08-17",
+    "phone":"+54 351 5550152",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0153",
+    "signup_date":"2024-11-14",
+    "phone":"+54 351 5550153",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0154",
+    "signup_date":"2024-08-10",
+    "phone":"+54 351 5550154",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0155",
+    "signup_date":"2025-01-24",
+    "phone":"+54 351 5550155",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0156",
+    "signup_date":"2025-06-27",
+    "phone":"+54 351 5550156",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0157",
+    "signup_date":"2025-09-12",
+    "phone":"+54 351 5550157",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0158",
+    "signup_date":"2023-10-07",
+    "phone":"+54 351 5550158",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0159",
+    "signup_date":"2025-05-14",
+    "phone":"+54 351 5550159",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0160",
+    "signup_date":"2025-11-18",
+    "phone":"+54 351 5550160",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0161",
+    "signup_date":"2025-06-25",
+    "phone":"+54 351 5550161",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0162",
+    "signup_date":"2024-12-28",
+    "phone":"+54 351 5550162",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0163",
+    "signup_date":"2025-07-08",
+    "phone":"+54 351 5550163",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0164",
+    "signup_date":"2025-03-04",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0165",
+    "signup_date":"2024-10-04",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0166",
+    "signup_date":"2025-04-03",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0167",
+    "signup_date":"2025-08-07",
+    "phone":"+54 351 5550167",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0168",
+    "signup_date":"2023-07-05",
+    "phone":"+54 351 5550168",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0169",
+    "signup_date":"2024-02-03",
+    "phone":"+54 351 5550169",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0170",
+    "signup_date":"2024-11-14",
+    "phone":"+54 351 5550170",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0171",
+    "signup_date":"2025-08-05",
+    "phone":"+54 351 5550171",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0172",
+    "signup_date":"2024-08-01",
+    "phone":"+54 351 5550172",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0173",
+    "signup_date":"2025-11-17",
+    "phone":"+54 351 5550173",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0174",
+    "signup_date":"2025-09-02",
+    "phone":"+54 351 5550174",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0175",
+    "signup_date":"2024-07-27",
+    "phone":"+54 351 5550175",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0176",
+    "signup_date":"2024-01-23",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0177",
+    "signup_date":"2023-07-15",
+    "phone":"+54 351 5550177",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0178",
+    "signup_date":"2025-11-04",
+    "phone":"+54 351 5550178",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0179",
+    "signup_date":"2025-01-04",
+    "phone":"+54 351 5550179",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0180",
+    "signup_date":"2025-12-08",
+    "phone":"+54 351 5550180",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0181",
+    "signup_date":"2024-10-03",
+    "phone":"+54 351 5550181",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0182",
+    "signup_date":"2025-05-21",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0183",
+    "signup_date":"2025-01-25",
+    "phone":"+54 351 5550183",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0184",
+    "signup_date":"2025-11-10",
+    "phone":"+54 351 5550184",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0185",
+    "signup_date":"2025-07-12",
+    "phone":"+54 351 5550185",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0186",
+    "signup_date":"2024-02-26",
+    "phone":"+54 351 5550186",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0187",
+    "signup_date":"2025-01-14",
+    "phone":"+54 351 5550187",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0188",
+    "signup_date":"2023-10-04",
+    "phone":"+54 351 5550188",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0189",
+    "signup_date":"2025-12-16",
+    "phone":"+54 351 5550189",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0190",
+    "signup_date":"2025-07-03",
+    "phone":"+54 351 5550190",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0191",
+    "signup_date":"2024-10-27",
+    "phone":"+54 351 5550191",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0192",
+    "signup_date":"2024-08-10",
+    "phone":"+54 351 5550192",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0193",
+    "signup_date":"2024-02-16",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0194",
+    "signup_date":"2025-07-18",
+    "phone":"+54 351 5550194",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0195",
+    "signup_date":"2025-04-15",
+    "phone":"+54 351 5550195",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0196",
+    "signup_date":"2023-12-18",
+    "phone":"+54 351 5550196",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0197",
+    "signup_date":"2024-12-22",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0198",
+    "signup_date":"2023-08-05",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0199",
+    "signup_date":"2024-12-06",
+    "phone":"+54 351 5550199",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0200",
+    "signup_date":"2023-12-07",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0201",
+    "signup_date":"2025-10-16",
+    "phone":"+54 351 5550201",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0202",
+    "signup_date":"2025-05-29",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0203",
+    "signup_date":"2024-02-28",
+    "phone":"+54 351 5550203",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0204",
+    "signup_date":"2023-09-24",
+    "phone":"+54 351 5550204",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0205",
+    "signup_date":"2025-09-03",
+    "phone":"+54 351 5550205",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0206",
+    "signup_date":"2025-01-28",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0207",
+    "signup_date":"2025-05-12",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0208",
+    "signup_date":"2025-01-07",
+    "phone":"+54 351 5550208",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0209",
+    "signup_date":"2025-01-24",
+    "phone":"+54 351 5550209",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0210",
+    "signup_date":"2025-04-06",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0211",
+    "signup_date":"2025-09-03",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0212",
+    "signup_date":"2023-07-28",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0213",
+    "signup_date":"2025-03-11",
+    "phone":"+54 351 5550213",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0214",
+    "signup_date":"2025-01-06",
+    "phone":"+54 351 5550214",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0215",
+    "signup_date":"2024-06-04",
+    "phone":"+54 351 5550215",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0216",
+    "signup_date":"2025-09-05",
+    "phone":"+54 351 5550216",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0217",
+    "signup_date":"2024-05-26",
+    "phone":"+54 351 5550217",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0218",
+    "signup_date":"2025-03-31",
+    "phone":"+54 351 5550218",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0219",
+    "signup_date":"2024-11-17",
+    "phone":"+54 351 5550219",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0220",
+    "signup_date":"2024-06-12",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0221",
+    "signup_date":"2024-10-15",
+    "phone":"+54 351 5550221",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0222",
+    "signup_date":"2024-02-16",
+    "phone":"+54 351 5550222",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0223",
+    "signup_date":"2024-01-06",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0224",
+    "signup_date":"2024-02-10",
+    "phone":"+54 351 5550224",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0225",
+    "signup_date":"2024-07-19",
+    "phone":"+54 351 5550225",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0226",
+    "signup_date":"2024-07-11",
+    "phone":"+54 351 5550226",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0227",
+    "signup_date":"2024-04-08",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0228",
+    "signup_date":"2025-03-24",
+    "phone":"+54 351 5550228",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0229",
+    "signup_date":"2025-03-19",
+    "phone":"+54 351 5550229",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0230",
+    "signup_date":"2025-07-14",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0231",
+    "signup_date":"2024-03-15",
+    "phone":"+54 351 5550231",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0232",
+    "signup_date":"2024-06-23",
+    "phone":"+54 351 5550232",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0233",
+    "signup_date":"2025-06-09",
+    "phone":"+54 351 5550233",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0234",
+    "signup_date":"2024-09-28",
+    "phone":"+54 351 5550234",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0235",
+    "signup_date":"2024-08-14",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0236",
+    "signup_date":"2025-04-09",
+    "phone":"+54 351 5550236",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0237",
+    "signup_date":"2024-05-13",
+    "phone":"+54 351 5550237",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0238",
+    "signup_date":"2025-05-07",
+    "phone":"+54 351 5550238",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0239",
+    "signup_date":"2024-02-10",
+    "phone":"+54 351 5550239",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0240",
+    "signup_date":"2025-09-26",
+    "phone":"+54 351 5550240",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0241",
+    "signup_date":"2024-02-19",
+    "phone":"+54 351 5550241",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0242",
+    "signup_date":"2025-05-14",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0243",
+    "signup_date":"2025-04-24",
+    "phone":"+54 351 5550243",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0244",
+    "signup_date":"2025-10-04",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0245",
+    "signup_date":"2024-07-08",
+    "phone":"+54 351 5550245",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0246",
+    "signup_date":"2025-05-02",
+    "phone":"+54 351 5550246",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0247",
+    "signup_date":"2025-02-27",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0248",
+    "signup_date":"2024-10-14",
+    "phone":"+54 351 5550248",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0249",
+    "signup_date":"2024-02-18",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0250",
+    "signup_date":"2025-05-22",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0251",
+    "signup_date":"2023-10-21",
+    "phone":"+54 351 5550251",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0252",
+    "signup_date":"2025-10-07",
+    "phone":"+54 351 5550252",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0253",
+    "signup_date":"2024-11-08",
+    "phone":"+54 351 5550253",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0254",
+    "signup_date":"2024-09-14",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0255",
+    "signup_date":"2025-01-14",
+    "phone":"+54 351 5550255",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0256",
+    "signup_date":"2024-03-24",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0257",
+    "signup_date":"2024-11-21",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0258",
+    "signup_date":"2025-09-14",
+    "phone":"+54 351 5550258",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0259",
+    "signup_date":"2024-07-20",
+    "phone":"+54 351 5550259",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0260",
+    "signup_date":"2024-07-21",
+    "phone":"+54 351 5550260",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0261",
+    "signup_date":"2023-10-21",
+    "phone":"+54 351 5550261",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0262",
+    "signup_date":"2025-03-04",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0263",
+    "signup_date":"2025-03-16",
+    "phone":"+54 351 5550263",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0264",
+    "signup_date":"2023-09-19",
+    "phone":"+54 351 5550264",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0265",
+    "signup_date":"2025-05-29",
+    "phone":"+54 351 5550265",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0266",
+    "signup_date":"2023-10-21",
+    "phone":"+54 351 5550266",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0267",
+    "signup_date":"2023-07-02",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0268",
+    "signup_date":"2025-04-02",
+    "phone":"+54 351 5550268",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0269",
+    "signup_date":"2024-02-05",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0270",
+    "signup_date":"2025-01-16",
+    "phone":"+54 351 5550270",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0271",
+    "signup_date":"2025-11-01",
+    "phone":"+54 351 5550271",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0272",
+    "signup_date":"2025-07-05",
+    "phone":"+54 351 5550272",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0273",
+    "signup_date":"2024-02-10",
+    "phone":"+54 351 5550273",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0274",
+    "signup_date":"2024-07-19",
+    "phone":"+54 351 5550274",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0275",
+    "signup_date":"2024-08-06",
+    "phone":"+54 351 5550275",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0276",
+    "signup_date":"2025-03-29",
+    "phone":"+54 351 5550276",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0277",
+    "signup_date":"2023-11-07",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0278",
+    "signup_date":"2023-08-22",
+    "phone":"+54 351 5550278",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0279",
+    "signup_date":"2025-05-14",
+    "phone":"+54 351 5550279",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0280",
+    "signup_date":"2025-06-29",
+    "phone":"+54 351 5550280",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0281",
+    "signup_date":"2025-05-02",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0282",
+    "signup_date":"2025-06-09",
+    "phone":"+54 351 5550282",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0283",
+    "signup_date":"2024-08-19",
+    "phone":"+54 351 5550283",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0284",
+    "signup_date":"2024-03-03",
+    "phone":"+54 351 5550284",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0285",
+    "signup_date":"2025-10-13",
+    "phone":"+54 351 5550285",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0286",
+    "signup_date":"2024-09-11",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0287",
+    "signup_date":"2024-01-19",
+    "phone":"+54 351 5550287",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0288",
+    "signup_date":"2023-12-31",
+    "phone":"+54 351 5550288",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0289",
+    "signup_date":"2023-10-31",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0290",
+    "signup_date":"2024-08-04",
+    "phone":"+54 351 5550290",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0291",
+    "signup_date":"2025-08-05",
+    "phone":"+54 351 5550291",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0292",
+    "signup_date":"2024-04-19",
+    "phone":"+54 351 5550292",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0293",
+    "signup_date":"2024-04-05",
+    "phone":"+54 351 5550293",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0294",
+    "signup_date":"2025-10-14",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0295",
+    "signup_date":"2025-11-30",
+    "phone":"+54 351 5550295",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0296",
+    "signup_date":"2025-03-01",
+    "phone":"+54 351 5550296",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0297",
+    "signup_date":"2024-01-14",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0298",
+    "signup_date":"2025-12-23",
+    "phone":"+54 351 5550298",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0299",
+    "signup_date":"2024-11-22",
+    "phone":"+54 351 5550299",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0300",
+    "signup_date":"2025-07-21",
+    "phone":"+54 351 5550300",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0301",
+    "signup_date":"2023-11-21",
+    "phone":"+54 351 5550301",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0302",
+    "signup_date":"2025-02-28",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0303",
+    "signup_date":"2024-01-17",
+    "phone":"+54 351 5550303",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0304",
+    "signup_date":"2023-11-01",
+    "phone":"+54 351 5550304",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0305",
+    "signup_date":"2024-01-03",
+    "phone":"+54 351 5550305",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0306",
+    "signup_date":"2024-05-21",
+    "phone":"+54 351 5550306",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0307",
+    "signup_date":"2024-10-06",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0308",
+    "signup_date":"2024-06-13",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0309",
+    "signup_date":"2025-08-09",
+    "phone":"+54 351 5550309",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0310",
+    "signup_date":"2025-04-20",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0311",
+    "signup_date":"2025-08-02",
+    "phone":"+54 351 5550311",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0312",
+    "signup_date":"2026-01-17",
+    "phone":"+54 351 5550312",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0313",
+    "signup_date":"2024-08-06",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0314",
+    "signup_date":"2024-06-10",
+    "phone":"+54 351 5550314",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0315",
+    "signup_date":"2024-11-22",
+    "phone":"+54 351 5550315",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0316",
+    "signup_date":"2023-11-24",
+    "phone":"+54 351 5550316",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0317",
+    "signup_date":"2023-11-25",
+    "phone":"+54 351 5550317",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0318",
+    "signup_date":"2025-11-10",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0319",
+    "signup_date":"2025-06-10",
+    "phone":"+54 351 5550319",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0320",
+    "signup_date":"2025-09-27",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0321",
+    "signup_date":"2024-10-31",
+    "phone":"+54 351 5550321",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0322",
+    "signup_date":"2026-01-14",
+    "phone":"+54 351 5550322",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0323",
+    "signup_date":"2026-01-21",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0324",
+    "signup_date":"2025-03-31",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0325",
+    "signup_date":"2025-01-01",
+    "phone":"+54 351 5550325",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0326",
+    "signup_date":"2024-06-02",
+    "phone":"+54 351 5550326",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0327",
+    "signup_date":"2025-11-18",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0328",
+    "signup_date":"2025-04-01",
+    "phone":"+54 351 5550328",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0329",
+    "signup_date":"2025-08-17",
+    "phone":"+54 351 5550329",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0330",
+    "signup_date":"2024-10-15",
+    "phone":"+54 351 5550330",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0331",
+    "signup_date":"2023-11-28",
+    "phone":"+54 351 5550331",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0332",
+    "signup_date":"2024-08-18",
+    "phone":"+54 351 5550332",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0333",
+    "signup_date":"2024-04-23",
+    "phone":"+54 351 5550333",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0334",
+    "signup_date":"2025-03-02",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0335",
+    "signup_date":"2024-03-19",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0336",
+    "signup_date":"2025-08-02",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0337",
+    "signup_date":"2023-11-21",
+    "phone":"+54 351 5550337",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0338",
+    "signup_date":"2024-06-10",
+    "phone":"+54 351 5550338",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0339",
+    "signup_date":"2025-03-15",
+    "phone":"+54 351 5550339",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0340",
+    "signup_date":"2025-01-22",
+    "phone":"+54 351 5550340",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0341",
+    "signup_date":"2025-11-27",
+    "phone":"+54 351 5550341",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0342",
+    "signup_date":"2023-07-02",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0343",
+    "signup_date":"2025-12-13",
+    "phone":"+54 351 5550343",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0344",
+    "signup_date":"2024-04-29",
+    "phone":"+54 351 5550344",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0345",
+    "signup_date":"2024-03-10",
+    "phone":"+54 351 5550345",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0346",
+    "signup_date":"2025-04-12",
+    "phone":"+54 351 5550346",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0347",
+    "signup_date":"2024-09-25",
+    "phone":"+54 351 5550347",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0348",
+    "signup_date":"2023-08-06",
+    "phone":"+54 351 5550348",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0349",
+    "signup_date":"2023-12-07",
+    "phone":"+54 351 5550349",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0350",
+    "signup_date":"2023-07-09",
+    "phone":"+54 351 5550350",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0351",
+    "signup_date":"2024-02-18",
+    "phone":"+54 351 5550351",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0352",
+    "signup_date":"2023-10-07",
+    "phone":"+54 351 5550352",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0353",
+    "signup_date":"2025-04-19",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0354",
+    "signup_date":"2025-09-23",
+    "phone":"+54 351 5550354",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0355",
+    "signup_date":"2024-01-24",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0356",
+    "signup_date":"2023-11-08",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0357",
+    "signup_date":"2024-08-07",
+    "phone":"+54 351 5550357",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0358",
+    "signup_date":"2023-11-29",
+    "phone":"+54 351 5550358",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0359",
+    "signup_date":"2023-08-23",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0360",
+    "signup_date":"2023-10-28",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0361",
+    "signup_date":"2025-05-03",
+    "phone":"+54 351 5550361",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0362",
+    "signup_date":"2026-01-05",
+    "phone":"+54 351 5550362",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0363",
+    "signup_date":"2025-03-19",
+    "phone":"+54 351 5550363",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0364",
+    "signup_date":"2025-02-06",
+    "phone":"+54 351 5550364",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0365",
+    "signup_date":"2025-03-16",
+    "phone":"+54 351 5550365",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0366",
+    "signup_date":"2024-08-23",
+    "phone":"+54 351 5550366",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0367",
+    "signup_date":"2024-08-25",
+    "phone":"+54 351 5550367",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0368",
+    "signup_date":"2023-10-12",
+    "phone":"+54 351 5550368",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0369",
+    "signup_date":"2025-10-29",
+    "phone":"+54 351 5550369",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0370",
+    "signup_date":"2024-03-10",
+    "phone":"+54 351 5550370",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0371",
+    "signup_date":"2024-02-12",
+    "phone":"+54 351 5550371",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0372",
+    "signup_date":"2023-10-20",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0373",
+    "signup_date":"2024-11-21",
+    "phone":"+54 351 5550373",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0374",
+    "signup_date":"2024-10-15",
+    "phone":"+54 351 5550374",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0375",
+    "signup_date":"2023-10-07",
+    "phone":"+54 351 5550375",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0376",
+    "signup_date":"2023-11-30",
+    "phone":"+54 351 5550376",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0377",
+    "signup_date":"2025-11-07",
+    "phone":"+54 351 5550377",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0378",
+    "signup_date":"2025-12-30",
+    "phone":"+54 351 5550378",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0379",
+    "signup_date":"2025-12-12",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0380",
+    "signup_date":"2025-11-24",
+    "phone":"+54 351 5550380",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0381",
+    "signup_date":"2024-06-02",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0382",
+    "signup_date":"2025-06-05",
+    "phone":"+54 351 5550382",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0383",
+    "signup_date":"2025-09-29",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0384",
+    "signup_date":"2023-12-10",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0385",
+    "signup_date":"2025-06-19",
+    "phone":"+54 351 5550385",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0386",
+    "signup_date":"2025-05-11",
+    "phone":"+54 351 5550386",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0387",
+    "signup_date":"2023-12-08",
+    "phone":"+54 351 5550387",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0388",
+    "signup_date":"2025-01-30",
+    "phone":"+54 351 5550388",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0389",
+    "signup_date":"2025-09-08",
+    "phone":null,
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0390",
+    "signup_date":"2024-08-01",
+    "phone":"+54 351 5550390",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0391",
+    "signup_date":"2024-04-02",
+    "phone":"+54 351 5550391",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0392",
+    "signup_date":"2025-09-23",
+    "phone":"+54 351 5550392",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0393",
+    "signup_date":"2026-01-01",
+    "phone":"+54 351 5550393",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0394",
+    "signup_date":"2024-11-15",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0395",
+    "signup_date":"2025-12-12",
+    "phone":"+54 351 5550395",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0396",
+    "signup_date":"2024-07-26",
+    "phone":null,
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0397",
+    "signup_date":"2023-11-12",
+    "phone":"+54 351 5550397",
+    "newsletter":true
+  },
+  {
+    "customer_id":"C0398",
+    "signup_date":"2024-01-11",
+    "phone":"+54 351 5550398",
+    "newsletter":false
+  },
+  {
+    "customer_id":"C0399",
+    "signup_date":"2024-08-04",
+    "phone":"+54 351 5550399",
+    "newsletter":true
+  }
+]
