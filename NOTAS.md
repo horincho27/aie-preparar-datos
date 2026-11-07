@@ -1,7 +1,6 @@
-# Mis observaciones
+# Mis decisiones durante la clase
 
-Completá este archivo durante la etapa 2.
-
-- ¿Qué problemas encontraste y cómo los mediste?
-- ¿Qué datos existen cuando llega un pedido nuevo?
-- ¿Qué decisiones tomaste en cada etapa y por qué?
+- Etapa 1: ¿qué diferencia hay entre las tasas con y sin teléfono?
+- Etapa 2: ¿qué columnas existen cuando llega un pedido nuevo y cuáles revelan el futuro?
+- Etapa 3: ¿qué aprende el transformador y con qué filas debería aprenderlo?
+- Resultado: pegá tu línea «Mi F1 en producción» y explicá qué significa.

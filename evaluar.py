@@ -7,14 +7,18 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
-from preparar.cargar import aplicar_a_nuevos
+from preparar.listo.cargar import aplicar_a_nuevos
+from preparar.listo.recorrido import comprobar_etapas
+from preparar.listo.estado import EtapaPendiente
 
 def main():
+    # Detectamos primero la etapa pendiente, incluso si hay archivos de una ejecución vieja.
+    comprobar_etapas()
     raiz = Path(__file__).resolve().parent
     carpeta = raiz / "data/processed"
     necesarios = [carpeta / nombre for nombre in ["train.csv", "test.csv", "preparacion.joblib", "esquema.json"]]
     if not all(ruta.exists() for ruta in necesarios):
-        print("Falta la etapa 9: generá los archivos de data/processed con python run_all.py después de completar las etapas 1 a 9.")
+        print("Falta generar los archivos de la etapa 3: ejecutá python run_all.py para crear data/processed.")
         return
     train = pd.read_csv(carpeta / "train.csv", index_col="order_id")
     test = pd.read_csv(carpeta / "test.csv", index_col="order_id")
@@ -48,15 +52,15 @@ def main():
     print(f"Producción: {registro['leidas']} filas leídas, {registro['duplicadas']} duplicadas, {registro['rechazadas']} rechazadas y {registro['procesadas']} evaluadas.")
     print("La exactitud sola engaña: decir 'nadie devuelve' ya acierta alrededor del 80 %, pero no detecta ninguna devolución.")
     if puntajes["Tu prueba"] - puntajes["Producción"] > 0.15:
-        print("Tu prueba da mucho mejor que producción. Revisá la etapa 7: puede haber quedado información del futuro.")
+        print("Tu prueba da mucho mejor que producción. Revisá la etapa 2: puede haber quedado información del futuro.")
     print(f"Mi F1 en producción: {puntajes['Producción']:.2f}".replace(".", ","))
 
 if __name__ == "__main__":
     try:
         main()
-    except NotImplementedError:
-        print("Falta completar aplicar_a_nuevos de la etapa 9 y las funciones anteriores que utiliza.")
+    except EtapaPendiente as error:
+        print(error)
     except FileNotFoundError:
-        print("Faltan archivos: revisá los datos de las etapas 1 y 9 y ejecutá python run_all.py.")
+        print("Faltan archivos: revisá data/raw, data/new y data/processed y ejecutá python run_all.py.")
     except (ValueError, KeyError):
-        print("Los archivos preparados no coinciden con lo esperado. Revisá las etapas 7 a 9 y volvé a ejecutar python run_all.py.")
+        print("Los archivos preparados no coinciden con lo esperado. Revisá las etapas 2 y 3 y volvé a ejecutar python run_all.py.")
