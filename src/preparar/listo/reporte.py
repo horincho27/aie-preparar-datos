@@ -21,9 +21,6 @@ from preparar.listo.estado import ejecutar_etapa, EtapaPendiente
 from preparar.listo.extraer import cargar_fuentes
 from preparar.listo.pipeline import ajustar_y_transformar, version_mal
 
-FUTURAS = ["refund_amount", "return_reason"]
-
-
 def decimal(valor, cifras=3):
     return f"{valor:.{cifras}f}".replace(".", ",")
 
@@ -40,8 +37,10 @@ def metricas(reales, predichas):
     }
 
 
-def con_filtracion(pipeline):
-    """Añade explícitamente las dos columnas que aparecen después del pedido."""
+def con_filtracion(pipeline, datos_futuros):
+    """Incluye las columnas que el ejercicio deja fuera de los pedidos nuevos."""
+    numericas = datos_futuros.select_dtypes(include="number").columns.tolist()
+    categoricas = datos_futuros.columns.difference(numericas, sort=False).tolist()
     futuro_numerico = SimpleImputer(strategy="constant", fill_value=0)
     futuro_texto = Pipeline([
         ("imputer", SimpleImputer(strategy="constant", fill_value="sin_devolucion")),
@@ -50,11 +49,11 @@ def con_filtracion(pipeline):
     variante = clone(pipeline)
     variante.set_params(transformers=[
         *variante.transformers,
-        ("reembolso_futuro", futuro_numerico, ["refund_amount"]),
-        ("motivo_futuro", futuro_texto, ["return_reason"]),
+        ("numericas_futuras", futuro_numerico, numericas),
+        ("categoricas_futuras", futuro_texto, categoricas),
     ])
     # Esos campos no existen cuando llega un pedido nuevo. Se tratan como vacíos.
-    variante.permitir_ausentes_ = FUTURAS
+    variante.permitir_ausentes_ = datos_futuros.columns.tolist()
     return variante
 
 
@@ -68,6 +67,9 @@ class Evaluacion:
     def __init__(self, raiz):
         pedidos, clientes = cargar_fuentes(raiz)
         nuevos = pd.read_csv(raiz / "data/new/orders_new.csv", dtype={"price": "string"})
+        # En este ejercicio, el histórico añade la etiqueta y los datos posteriores al pedido.
+        solo_historico = pedidos.columns.difference(nuevos.columns, sort=False)
+        self.columnas_futuras = solo_historico.drop("returned").tolist()
         self.historico = precio_unitario(preparar_base(pedidos, clientes)[0])
         self.nuevos = precio_unitario(preparar_base(nuevos, clientes)[0])
         respuestas = json.loads(base64.b64decode((raiz / "data/new/.respuestas").read_bytes()))
@@ -101,7 +103,9 @@ class Evaluacion:
 
     def etapa_1(self):
         # Las dos pruebas excluyen los datos futuros y usan los mismos pedidos.
-        historico = self.agregar_referencia(self.historico.drop(columns=FUTURAS), "dias_desde_registro")
+        historico = self.agregar_referencia(
+            self.historico.drop(columns=self.columnas_futuras), "dias_desde_registro"
+        )
         nuevos = self.agregar_referencia(self.nuevos, "dias_desde_registro")
         despues = ejecutar_etapa(1, faltantes.agregar_indicador_faltante, historico.copy(), "phone")
         tasas = ejecutar_etapa(1, faltantes.comparar_tasa, despues.copy(), "phone_missing")
@@ -140,12 +144,13 @@ class Evaluacion:
         despues = ejecutar_etapa(2, enriquecer.quitar_filtracion, antes.copy())
         nuevos = ejecutar_etapa(2, enriquecer.dias_desde_registro, nuevos)
         nuevos = ejecutar_etapa(2, enriquecer.quitar_filtracion, nuevos)
-        if set(FUTURAS).intersection(despues.columns):
+        if set(self.columnas_futuras).intersection(despues.columns):
             raise ValueError("Todavía hay datos posteriores al pedido.")
 
         referencia = self.referencia["pipeline"]
         prueba_antes, produccion_antes = self.medir(
-            self.separar_referencia(antes), nuevos, con_filtracion(referencia)
+            self.separar_referencia(antes), nuevos,
+            con_filtracion(referencia, self.historico[self.columnas_futuras]),
         )
         prueba_despues, produccion_despues = self.medir(
             self.separar_referencia(despues), nuevos, clone(referencia)
@@ -161,7 +166,9 @@ class Evaluacion:
 
     def etapa_3(self):
         columnas = ("phone_missing", "dias_desde_registro")
-        historico = self.agregar_referencia(self.historico.drop(columns=FUTURAS), *columnas)
+        historico = self.agregar_referencia(
+            self.historico.drop(columns=self.columnas_futuras), *columnas
+        )
         nuevos = self.agregar_referencia(self.nuevos, *columnas)
         partes = ejecutar_etapa(3, etapa_pipeline.separar, historico.copy())
         pipeline = ejecutar_etapa(3, etapa_pipeline.construir_pipeline)
@@ -199,9 +206,9 @@ class Evaluacion:
         partes = etapa_pipeline.separar(historico)
         pipeline = etapa_pipeline.construir_pipeline()
         correcta = self.medir(partes, nuevos, pipeline)
-        futuro = self.historico.set_index("order_id")[FUTURAS]
+        futuro = self.historico.set_index("order_id")[self.columnas_futuras]
         partes_con_futuro = tuple(parte.join(futuro, on="order_id") for parte in partes)
-        filtracion = self.medir(partes_con_futuro, nuevos, con_filtracion(pipeline))
+        filtracion = self.medir(partes_con_futuro, nuevos, con_filtracion(pipeline, futuro))
         reales = self.etiquetas.loc[nuevos["order_id"]]
         cero = (None, metricas(reales, np.zeros(len(reales), dtype=int)))
         imprimir_cierre(correcta, filtracion, cero)

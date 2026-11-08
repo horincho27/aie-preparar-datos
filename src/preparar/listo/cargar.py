@@ -7,6 +7,7 @@ import json
 import joblib
 import pandas as pd
 from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
 from preparar.listo.extraer import cargar_fuentes, unir
 from preparar.listo.duplicados import eliminar_duplicados
 from preparar.listo.tipos import convertir_precio, convertir_fecha, estandarizar_categoria
@@ -85,16 +86,21 @@ def transformar_pedidos(tabla: pd.DataFrame, pipeline: ColumnTransformer) -> pd.
     # debe declarar explícitamente cómo representa el futuro ausente.
     faltantes = set(pipeline.feature_names_in_) - set(entrada.columns)
     usadas = set()
+    texto = set()
     for _, transformador, columnas in pipeline.transformers_:
         if not isinstance(transformador, str):
             usadas.update(columnas)
+        if isinstance(transformador, Pipeline):
+            imputador = transformador.named_steps.get("imputer")
+            if isinstance(getattr(imputador, "fill_value", None), str):
+                texto.update(columnas)
     permitidas = set(getattr(pipeline, "permitir_ausentes_", []))
     if (faltantes & usadas) - permitidas:
         raise ValueError("Faltan características necesarias para la preparación guardada.")
     entrada = entrada.reindex(columns=pipeline.feature_names_in_)
-    for columna in permitidas:
-        if columna == "return_reason":
-            entrada[columna] = entrada[columna].astype(object)
+    # Una columna ausente llega como numérica. Conserva el tipo de las que esperan texto.
+    for columna in permitidas & texto:
+        entrada[columna] = entrada[columna].astype(object)
     # Solo transform: la mediana y la escala ya se aprendieron con train.
     return pd.DataFrame(
         pipeline.transform(entrada),

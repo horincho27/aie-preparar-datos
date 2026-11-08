@@ -10,7 +10,11 @@ def dias_desde_registro(df: pd.DataFrame) -> pd.DataFrame:
     raise NotImplementedError("Completa esta función y ejecuta las pruebas de su etapa.")
 
 def quitar_filtracion(df: pd.DataFrame) -> pd.DataFrame:
-    """Recibe tabla; devuelve copia sin refund_amount ni return_reason.
+    """quitar_filtracion(df) devuelve una copia sin las columnas que solo
+    existen después de que el pedido se devolvió.
     
-    Pista: piensa si esas columnas existirían al llegar un pedido nuevo."""
+    Para encontrarlas, revisa cada columna de data/raw y pregúntate si
+    existiría cuando llega un pedido nuevo. Debe funcionar aunque esas
+    columnas ya falten, como ocurre en producción.
+    """
     raise NotImplementedError("Completa esta función y ejecuta las pruebas de su etapa.")

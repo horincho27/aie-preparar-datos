@@ -39,13 +39,15 @@ pytest tests/test_listo.py tests/test_estructura.py
 
 ## Etapa 2 · La columna que hace trampa
 
-**Qué hacer.** Completa `src/preparar/enriquecer.py`. `dias_desde_registro(df)` devuelve una copia con los días entre `signup_date` y `order_date`. Usa la fecha del pedido para el cálculo. `quitar_filtracion(df)` devuelve una copia sin `refund_amount` ni `return_reason`, incluso si esas columnas ya faltan, como ocurre en producción. El precio por unidad ya lo calcula una función de `listo/`.
+**Qué hacer.** Completa `src/preparar/enriquecer.py`. `dias_desde_registro(df)` devuelve una copia con los días entre `signup_date` y `order_date`. Usa la fecha del pedido para el cálculo. El precio por unidad ya lo calcula una función de `listo/`.
+
+`quitar_filtracion(df)` devuelve una copia sin las columnas que solo existen después de que el pedido se devolvió. Para encontrarlas, revisa cada columna de `data/raw` y pregúntate si existiría cuando llega un pedido nuevo. Debe funcionar aunque esas columnas ya falten, como ocurre en producción.
 
 **Por qué:** una columna creada después de la devolución le regala la respuesta al modelo.
 
 **Para qué:** aprender con información que existe cuando llega el pedido, sin mirar el futuro.
 
-**Cómo verificar:** `pytest tests/test_etapa_2_filtracion.py`. Comprueba los días, la eliminación de ambas columnas y la trampa: un árbol simple con el reembolso acierta casi el 100 %, pero sin él no.
+**Cómo verificar.** Ejecuta `pytest tests/test_etapa_2_filtracion.py` para comprobar el cálculo de días y la eliminación de las columnas del futuro. Observa cómo esos datos afectan al resultado de un árbol simple.
 
 ## Etapa 3 · Separar y preparar sin filtración
 

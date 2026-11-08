@@ -14,7 +14,7 @@ Lee este recorrido para ubicar tu trabajo. Estas funciones vienen resueltas y co
 10. **Tu etapa 1, `../faltantes.py`:** crea el indicador de teléfono ausente y compara las tasas.
 11. **Tu etapa 2, `../enriquecer.py`:** calcula días desde el registro usando la fecha del pedido.
 12. `enriquecer.precio_unitario`: divide precio por cantidad con protección contra cero.
-13. **Tu etapa 2, `../enriquecer.py`:** elimina las dos columnas que revelan el futuro.
+13. **Tu etapa 2, `../enriquecer.py`.** Elimina las columnas que solo existen después de la devolución.
 14. **Tu etapa 3, `../pipeline.py`:** separa train/test y construye el transformador sin ajustar.
 15. `pipeline.ajustar_y_transformar`: ajusta solo con train y transforma train/test, conservando nombres y etiqueta.
 16. `cargar.guardar`: escribe CSV, joblib y esquema; `order_id` queda como índice, nunca como predictor.
@@ -44,11 +44,11 @@ Qué significa · El indicador permite que el modelo use la diferencia entre los
 
 ```text
 Etapa 2 · La columna que hace trampa
-Qué hiciste · Calculaste los días desde el registro y quitaste el monto y el motivo de devolución.
+Qué hiciste · Calculaste los días desde el registro y quitaste las columnas del futuro.
 Antes · Con los datos futuros, F1 en prueba … y en producción ….
 Después · Sin los datos futuros, F1 en prueba … y en producción ….
 Días desde el registro · Dos cálculos sobre … pedidos dieron ….
-Qué significa · El reembolso adelanta la respuesta en la prueba, pero aún no existe cuando llega un pedido nuevo.
+Qué significa · Los datos del futuro adelantan la respuesta en la prueba y solo existen después de la devolución.
 ```
 
 ```text
