@@ -36,9 +36,10 @@ Los puntos suspensivos indican los valores que se calculan al completar la etapa
 ```text
 Etapa 1 · El dato que falta
 Qué hiciste · Marcaste los pedidos sin teléfono y comparaste las tasas de devolución.
-Antes · Devoluciones con teléfono … %, sin teléfono … %. F1 en producción sin el indicador ….
-Después · Devoluciones con teléfono … %, sin teléfono … %. F1 en producción con el indicador ….
-Qué significa · Las tasas son de los mismos pedidos. El indicador permite que el modelo use esa diferencia.
+Tasas de devolución · Con teléfono … %, sin teléfono … %.
+Antes · F1 en producción sin el indicador ….
+Después · F1 en producción con el indicador ….
+Qué significa · El indicador permite que el modelo use la diferencia entre los dos grupos.
 ```
 
 ```text
@@ -53,12 +54,12 @@ Qué significa · El reembolso adelanta la respuesta en la prueba, pero aún no 
 ```text
 Etapa 3 · Separar y preparar sin filtración
 Qué hiciste · Separaste los pedidos y ajustaste la preparación solo con los de entrenamiento.
-Antes · Ajuste con … de … pedidos. Mediana aprendida …. F1 en prueba … y en producción ….
-Después · Ajuste con … de … pedidos. Mediana aprendida … frente a … en el total. F1 en prueba … y en producción ….
+Si ajustaras con todo · … de … pedidos. Mediana aprendida …. F1 en prueba … y en producción ….
+Tu ajuste · … de … pedidos. Mediana aprendida … frente a … en el total. F1 en prueba … y en producción ….
 Devoluciones · Entrenamiento … %. Prueba … %.
 Producción · … pedidos transformados sin volver a ajustar.
 Diferencia de F1 (ajuste con todo menos ajuste con entrenamiento) · Prueba …, producción ….
-Qué significa · Ajustar con todo …, pero deja una evaluación tramposa porque la preparación vio los pedidos de prueba.
+Qué significa · En esta comparación, ajustar con todo …. Ese ajuste incluye los pedidos de prueba y compromete la evaluación.
 ```
 
 Cuando las tres etapas están completas, aparece la tabla que compara la preparación correcta, el uso de datos futuros y la predicción de cero para todos los pedidos.

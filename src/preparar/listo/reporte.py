@@ -122,13 +122,13 @@ class Evaluacion:
             nuevos.join(indicadores[1], on="order_id"),
             con_indicador,
         )[1]["f1"]
-        grupos = f"Devoluciones con teléfono {porcentaje(tasas[0])}, sin teléfono {porcentaje(tasas[1])}."
         return [
             "Etapa 1 · El dato que falta",
             "Qué hiciste · Marcaste los pedidos sin teléfono y comparaste las tasas de devolución.",
-            f"Antes · {grupos} F1 en producción sin el indicador {decimal(f1_antes)}.",
-            f"Después · {grupos} F1 en producción con el indicador {decimal(f1_despues)}.",
-            "Qué significa · Las tasas son de los mismos pedidos. El indicador permite que el modelo use esa diferencia.",
+            f"Tasas de devolución · Con teléfono {porcentaje(tasas[0])}, sin teléfono {porcentaje(tasas[1])}.",
+            f"Antes · F1 en producción sin el indicador {decimal(f1_antes)}.",
+            f"Después · F1 en producción con el indicador {decimal(f1_despues)}.",
+            "Qué significa · El indicador permite que el modelo use la diferencia entre los dos grupos.",
         ], indicadores
 
     def etapa_2(self):
@@ -170,20 +170,24 @@ class Evaluacion:
         prueba_mal, produccion_mal = self.puntuar(train_mal, test_mal, nuevos, pipeline_mal)
         diferencia_prueba = prueba_mal["f1"] - prueba["f1"]
         diferencia_produccion = produccion_mal["f1"] - produccion["f1"]
-        cambio = "casi no cambia el F1 (diferencias menores que 0,01)" if max(
-            abs(diferencia_prueba), abs(diferencia_produccion)
-        ) < 0.01 else "cambia el F1"
+        diferencia_maxima = max(abs(diferencia_prueba), abs(diferencia_produccion))
+        if diferencia_maxima == 0:
+            cambio = "no cambió el F1"
+        elif diferencia_maxima < 0.01:
+            cambio = "casi no cambió el F1 (diferencias menores que 0,01)"
+        else:
+            cambio = "cambió el F1"
         train, test = partes
         mediana_total = decimal(historico["price"].median(), 2)
         return [
             "Etapa 3 · Separar y preparar sin filtración",
             "Qué hiciste · Separaste los pedidos y ajustaste la preparación solo con los de entrenamiento.",
-            f"Antes · Ajuste con {len(historico)} de {len(historico)} pedidos. Mediana aprendida {decimal(mediana_aprendida(pipeline_mal), 2)}. F1 en prueba {decimal(prueba_mal['f1'])} y en producción {decimal(produccion_mal['f1'])}.",
-            f"Después · Ajuste con {len(train)} de {len(historico)} pedidos. Mediana aprendida {decimal(mediana_aprendida(pipeline), 2)} frente a {mediana_total} en el total. F1 en prueba {decimal(prueba['f1'])} y en producción {decimal(produccion['f1'])}.",
+            f"Si ajustaras con todo · {len(historico)} de {len(historico)} pedidos. Mediana aprendida {decimal(mediana_aprendida(pipeline_mal), 2)}. F1 en prueba {decimal(prueba_mal['f1'])} y en producción {decimal(produccion_mal['f1'])}.",
+            f"Tu ajuste · {len(train)} de {len(historico)} pedidos. Mediana aprendida {decimal(mediana_aprendida(pipeline), 2)} frente a {mediana_total} en el total. F1 en prueba {decimal(prueba['f1'])} y en producción {decimal(produccion['f1'])}.",
             f"Devoluciones · Entrenamiento {porcentaje(train['returned'].mean())} ({int(train['returned'].sum())} de {len(train)}). Prueba {porcentaje(test['returned'].mean())} ({int(test['returned'].sum())} de {len(test)}).",
             f"Producción · {len(nuevos)} pedidos transformados sin volver a ajustar.",
             f"Diferencia de F1 (ajuste con todo menos ajuste con entrenamiento) · Prueba {decimal(diferencia_prueba)}, producción {decimal(diferencia_produccion)}.",
-            f"Qué significa · Ajustar con todo {cambio}, pero deja una evaluación tramposa porque la preparación vio los pedidos de prueba.",
+            f"Qué significa · En esta comparación, ajustar con todo {cambio}. Ese ajuste incluye los pedidos de prueba y compromete la evaluación.",
         ], None
 
     def cierre(self, indicadores, tablas):
