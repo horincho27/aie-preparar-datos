@@ -1,4 +1,4 @@
-"""Lo entregado resuelto se prueba sin necesitar las respuestas del alumno."""
+"""Comprueba las funciones ya resueltas sin usar las respuestas del alumno."""
 import json
 from pathlib import Path
 from unittest.mock import Mock, patch
