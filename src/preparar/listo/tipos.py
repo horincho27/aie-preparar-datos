@@ -18,7 +18,7 @@ def convertir_precio(serie: pd.Series) -> pd.Series:
 def convertir_fecha(serie: pd.Series) -> pd.Series:
     """Recibe fechas de texto; devuelve datetime y NaT para fechas ilegibles.
 
-    Pista: probá los dos formatos explícitos para evitar ambigüedades de día y mes.
+    Pista: prueba los dos formatos explícitos para evitar ambigüedades de día y mes.
     """
     # Dos formatos explícitos evitan confundir el día con el mes.
     principal = pd.to_datetime(serie, format="%Y-%m-%d", errors="coerce")
@@ -28,7 +28,7 @@ def convertir_fecha(serie: pd.Series) -> pd.Series:
 def estandarizar_categoria(serie: pd.Series) -> pd.Series:
     """Recibe categorías de texto; devuelve sus nombres en una forma uniforme.
 
-    Pista: revisá mayúsculas y espacios al principio o al final.
+    Pista: revisa mayúsculas y espacios al principio o al final.
     """
     # La misma categoría no debe separarse por espacios o mayúsculas.
     return serie.astype("string").str.strip().str.lower()

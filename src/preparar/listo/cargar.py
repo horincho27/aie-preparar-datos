@@ -19,7 +19,7 @@ from preparar.listo.estado import ejecutar_etapa
 def guardar(train: pd.DataFrame, test: pd.DataFrame, pipeline: ColumnTransformer, destino: str | Path | None = None) -> None:
     """Recibe tablas preparadas y pipeline ajustado; escribe CSV, joblib y esquema JSON.
 
-    Pista: guardá también las columnas de entrada, sus tipos y una fecha UTC.
+    Pista: guarda también las columnas de entrada, sus tipos y una fecha UTC.
     """
     carpeta = Path(destino) if destino is not None else Path(__file__).resolve().parents[3] / "data/processed"
     carpeta.mkdir(parents=True, exist_ok=True)
@@ -61,7 +61,7 @@ def preparar_crudos(orders: pd.DataFrame, customers: pd.DataFrame) -> tuple[pd.D
 def aplicar_a_nuevos(path: str | Path, artefactos: str | Path | None = None) -> pd.DataFrame:
     """Recibe CSV de pedidos nuevos; devuelve características con columnas iguales a train.
 
-    Pista: cargá el joblib y usá transform; conservá order_id para alinear respuestas.
+    Pista: carga el joblib y usa transform. Conserva order_id para alinear respuestas.
     El registro de filas queda en resultado.attrs['registro'].
     """
     ruta = Path(path)

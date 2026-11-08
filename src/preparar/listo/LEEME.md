@@ -1,6 +1,6 @@
 # Lo que ya está hecho
 
-Leé este recorrido para ubicar tu trabajo. Estas funciones vienen resueltas y comentadas; durante la práctica solo completás las tres etapas indicadas.
+Lee este recorrido para ubicar tu trabajo. Estas funciones vienen resueltas y comentadas. Durante la práctica, completa las tres etapas indicadas.
 
 1. `extraer.cargar_fuentes`: lee los pedidos CSV y los clientes JSON locales.
 2. `extraer.unir`: junta por cliente con left join y registra filas antes y después.
@@ -25,7 +25,7 @@ Leé este recorrido para ubicar tu trabajo. Estas funciones vienen resueltas y c
 
 `cargar.preparar_base` agrupa los pasos iniciales; `cargar.preparar_crudos` añade las etapas 1 y 2 y el precio unitario, tanto para entrenamiento como para producción. La comparación de tasas usa etiquetas y solo se hace con pedidos históricos.
 
-Para comparar en clase, `pipeline.version_mal(df)` viene resuelta. Usa las funciones que completás en la etapa 3, pero ajusta con toda la tabla antes de separar: es el error que queremos reconocer. No se usa en `run_all.py`.
+Para comparar en clase, `pipeline.version_mal(df)` usa las funciones que completas en la etapa 3 y ajusta con toda la tabla antes de separar. Así puedes ver qué ocurre cuando el ajuste incluye la prueba.
 
 `estado.py` ayuda a indicar qué etapa falta. El evaluador usa los valores y el transformador de referencia de `listo/` en las otras dos etapas. Así, cada comparación cambia una sola cosa. Puedes ejecutar `python evaluar.py` después de cada etapa. El comando calcula el informe a partir de los datos del proyecto.
 
@@ -62,4 +62,4 @@ Diferencia de F1 (ajuste con todo menos ajuste con entrenamiento) · Prueba …,
 Qué significa · En esta comparación, ajustar con todo …. Ese ajuste incluye los pedidos de prueba y compromete la evaluación.
 ```
 
-Cuando las tres etapas están completas, aparece la tabla que compara la preparación correcta, el uso de datos futuros y la predicción de cero para todos los pedidos.
+Cuando las tres etapas están completas, aparece la tabla con las filas «Correcta», «Con datos del futuro» y «Siempre cero». La práctica termina al ver el antes y el después de cada etapa. Comparte en voz alta en clase la línea **«Mi F1 en producción: 0,XX»**.

@@ -208,14 +208,14 @@ class Evaluacion:
 
 
 def imprimir_cierre(correcta, filtracion, cero):
-    formato = "{:<16} {:>9} {:>13} {:>17} {:>21} {:>16} {:>20}"
+    formato = "{:<20} {:>9} {:>13} {:>17} {:>21} {:>16} {:>20}"
     print("Comparación final")
     print(formato.format(
         "Preparación", "F1 prueba", "F1 producción", "Detectadas prueba",
         "Detectadas producción", "Exactitud prueba", "Exactitud producción",
     ))
     for nombre, (prueba, produccion) in zip(
-        ("Correcta", "Con filtración", "Siempre cero"), (correcta, filtracion, cero)
+        ("Correcta", "Con datos del futuro", "Siempre cero"), (correcta, filtracion, cero)
     ):
         f1_prueba = decimal(prueba["f1"]) if prueba else "—"
         detectadas_prueba = prueba["detectadas"] if prueba else "—"

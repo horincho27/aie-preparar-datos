@@ -1,25 +1,25 @@
 # Preparar datos · Tienda Nimbus · versión corta
 
-Una práctica de tres etapas para una clase de una hora. Nimbus es una tienda ficticia de ropa, electrónica, hogar y libros. Queremos preparar los datos para predecir más adelante si un pedido se devolverá: `returned=1` indica devolución y `returned=0` que no.
+Esta práctica tiene tres etapas. Nimbus es una tienda ficticia de ropa, electrónica, hogar y libros. Vas a preparar los datos para predecir más adelante si un pedido se devolverá. `returned=1` indica devolución y `returned=0` indica que el pedido no se devolvió.
 
-Vas a completar **seis funciones en tres archivos**. El resto viene resuelto para leerlo. Los datos son los mismos de la versión larga: 2.040 filas históricas, 400 clientes y 200 pedidos nuevos. Son inventados y están en el repositorio; no necesitás descargar datasets ni conectarte a una API.
+Completa **seis funciones en tres archivos**. Puedes leer el resto del código ya resuelto. El repositorio incluye datos inventados de 2.040 filas históricas, 400 clientes y 200 pedidos nuevos. No necesitas descargar datos ni conectarte a una API.
 
 ## Preparar el entorno
 
-Abrí **Code → Codespaces → Create codespace**. El entorno usa Python 3.12 e instala las versiones fijadas de `requirements.txt`.
+Abre **Code → Codespaces → Create codespace**. El entorno usa Python 3.12 e instala las versiones fijadas de `requirements.txt`.
 
 ```bash
 python -m pip install -r requirements.txt
 python -m pytest
 ```
 
-Localmente, creá un entorno con `python -m venv .venv` y activalo: `source .venv/bin/activate` en Linux/macOS o `.venv\Scripts\Activate.ps1` en PowerShell. Después instalá los requisitos. Una vez instalados, todos los tests corren sin internet y en menos de 30 segundos.
+En tu equipo, crea un entorno con `python -m venv .venv`. Actívalo con `source .venv/bin/activate` en Linux/macOS o `.venv\Scripts\Activate.ps1` en PowerShell. Después instala los requisitos. Una vez instalados, todos los tests corren sin internet y en menos de 30 segundos.
 
-Al principio pasan `tests/test_listo.py` y `tests/test_estructura.py`; las pruebas de las tres etapas fallan porque sus funciones están vacías. No hace falta modificar tests ni el modelo de evaluación. Anotá tus decisiones en `NOTAS.md`.
+Al principio pasan `tests/test_listo.py` y `tests/test_estructura.py`. Las pruebas de las tres etapas fallan porque sus funciones están vacías. No hace falta modificar las pruebas ni el modelo de evaluación. Si quieres, anota lo que observes en [NOTAS.md](NOTAS.md).
 
 ## Lo que ya está hecho
 
-Leé [src/preparar/listo/LEEME.md](src/preparar/listo/LEEME.md): explica la tubería completa, en orden. Ahí están resueltos la lectura y unión, exploración, duplicados, tipos y formatos, validación, reglas de negocio, precio unitario, ajuste del transformador, guardado y aplicación a producción.
+Lee el recorrido completo para ubicar la lectura y unión, la exploración, los duplicados, los tipos y formatos, la validación, las reglas de negocio, el precio unitario, el ajuste del transformador, el guardado y la aplicación a producción. [src/preparar/listo/LEEME.md](src/preparar/listo/LEEME.md)
 
 **Los precios vacíos se conservan:** se rellenan en la etapa 3 con una mediana aprendida solo del entrenamiento. `price` es el importe del pedido antes del descuento, `quantity` la cantidad de unidades y `discount` una proporción. Los datos se unen por `customer_id`; `order_id` identifica pedidos y nunca es una característica del modelo.
 
@@ -29,7 +29,7 @@ pytest tests/test_listo.py tests/test_estructura.py
 
 ## Etapa 1 · El dato que falta
 
-**Qué hacer:** completá `src/preparar/faltantes.py`. `agregar_indicador_faltante(df, columna)` recibe una tabla y el nombre `"phone"`; devuelve una copia con `phone_missing`, de valor 1 si falta el teléfono y 0 si está. `comparar_tasa(df, columna)` recibe esa tabla y `"phone_missing"`; devuelve un diccionario con la tasa de `returned` por grupo (claves 0 y 1). Compará las tasas. No rellenes el precio.
+**Qué hacer.** Completa `src/preparar/faltantes.py`. `agregar_indicador_faltante(df, columna)` recibe una tabla y el nombre `"phone"`. Devuelve una copia con `phone_missing`, de valor 1 si falta el teléfono y 0 si está. `comparar_tasa(df, columna)` recibe esa tabla y `"phone_missing"`. Devuelve un diccionario con la tasa de `returned` por grupo (claves 0 y 1). Compara las tasas. No rellenes el precio.
 
 **Por qué:** un dato que falta puede ser información.
 
@@ -39,7 +39,7 @@ pytest tests/test_listo.py tests/test_estructura.py
 
 ## Etapa 2 · La columna que hace trampa
 
-**Qué hacer:** completá `src/preparar/enriquecer.py`. `dias_desde_registro(df)` devuelve una copia con los días entre `signup_date` y `order_date`; nunca uses la fecha de hoy. `quitar_filtracion(df)` devuelve una copia sin `refund_amount` ni `return_reason`, incluso si esas columnas ya faltan, como ocurre en producción. El precio por unidad ya lo calcula una función de `listo/`.
+**Qué hacer.** Completa `src/preparar/enriquecer.py`. `dias_desde_registro(df)` devuelve una copia con los días entre `signup_date` y `order_date`. Usa la fecha del pedido para el cálculo. `quitar_filtracion(df)` devuelve una copia sin `refund_amount` ni `return_reason`, incluso si esas columnas ya faltan, como ocurre en producción. El precio por unidad ya lo calcula una función de `listo/`.
 
 **Por qué:** una columna creada después de la devolución le regala la respuesta al modelo.
 
@@ -49,26 +49,25 @@ pytest tests/test_listo.py tests/test_estructura.py
 
 ## Etapa 3 · Separar y preparar sin filtración
 
-**Qué hacer:** completá `src/preparar/pipeline.py`. `separar(df)` devuelve `(train, test)`, 80/20, estratificado por `returned`, con `random_state=42`. `construir_pipeline()` devuelve un `ColumnTransformer` **sin ajustar**, con estas ramas:
+**Qué hacer.** Completa `src/preparar/pipeline.py`. `separar(df)` devuelve `(train, test)`, 80/20, estratificado por `returned`, con `random_state=42`. `construir_pipeline()` devuelve un `ColumnTransformer` **sin ajustar** con dos ramas.
 
 - `numericas`: un `Pipeline` con pasos `imputer` (`SimpleImputer(strategy="median")`) y `scaler` (`StandardScaler`), para `price`, `quantity`, `discount`, `phone_missing`, `dias_desde_registro` y `precio_unitario`.
 - `categoricas`: `OneHotEncoder(handle_unknown="ignore", sparse_output=False)` para `category`, `payment_method` y `shipping_city`.
 
-Descartá el resto de las columnas. La función resuelta `listo.pipeline.ajustar_y_transformar` excluye la etiqueta, ajusta **solo con train** y transforma train/test conservando sus nombres. Los tests esperan los nombres de ramas y pasos indicados arriba. Para comparar en clase, `listo.pipeline.version_mal(df)` viene resuelta y ajusta antes de separar.
+Descarta el resto de las columnas. La función resuelta `listo.pipeline.ajustar_y_transformar` excluye la etiqueta, ajusta **solo con train** y transforma train/test conservando sus nombres. Los tests esperan los nombres de ramas y pasos indicados arriba. Para comparar en clase, `listo.pipeline.version_mal(df)` viene resuelta y ajusta antes de separar.
 
 **Por qué:** si la mediana o el escalador ven la prueba, el examen deja de ser limpio. Esta filtración es distinta de conservar datos del futuro; su efecto en F1 no siempre es grande.
 
 **Para qué:** obtener datos preparados y medir su utilidad sin trampa.
 
-**Cómo verificar:** `pytest tests/test_etapa_3_sin_filtracion.py`. Comprueba la mediana de train y que transformar no reajuste. Después ejecutá:
+**Cómo verificar.** Ejecuta `pytest tests/test_etapa_3_sin_filtracion.py` para comprobar la mediana de train y que transformar no reajuste. Después ejecuta las pruebas completas y el evaluador.
 
 ```bash
 python -m pytest
-python run_all.py
 python evaluar.py
 ```
 
-`run_all.py` muestra las filas de cada paso y guarda `train.csv`, `test.csv`, `preparacion.joblib` y `esquema.json` en `data/processed/`. Los nuevos pedidos atraviesan la misma limpieza y tus etapas 1 y 2; el transformador guardado se aplica con `transform`, sin un nuevo ajuste. Una categoría desconocida no debe romper la preparación.
+Si quieres recorrer la preparación completa, ejecuta `python run_all.py`. El comando muestra las filas de cada paso y guarda `train.csv`, `test.csv`, `preparacion.joblib` y `esquema.json` en `data/processed/`. Los nuevos pedidos atraviesan la misma limpieza y tus etapas 1 y 2. El transformador guardado se aplica con `transform`, sin un nuevo ajuste. Una categoría desconocida no debe romper la preparación.
 
 ## Cómo leer la evaluación
 
@@ -76,10 +75,10 @@ python evaluar.py
 
 - **F1:** puntaje principal; combina cuántas devoluciones detectamos y cuántas alertas eran correctas.
 - **Devoluciones detectadas:** cuántas encontró entre todas las devoluciones reales, por ejemplo «13 de 33».
-- **Exactitud:** proporción total de aciertos. Sola engaña: decir «nadie devuelve» ya acierta alrededor del 80 %, pero detecta cero devoluciones y obtiene F1=0.
+- **Exactitud.** Proporción total de aciertos. En producción, predecir que ningún pedido se devuelve acierta más del 83 % y detecta cero devoluciones. Su F1 es 0.
 
-Puedes correr el evaluador después de cada etapa. Si hay funciones pendientes, indica la primera etapa que falta. Cuando las tres están completas, aparece una tabla con la preparación correcta, la preparación que usa información futura y la predicción de siempre cero. El evaluador calcula el informe desde los datos originales. `run_all.py` genera los cuatro archivos de entrega.
+Ejecuta el evaluador después de cada etapa para ver el antes y el después. Si hay funciones pendientes, el comando indica la primera etapa que falta. Cuando las tres están completas, aparece una tabla con las filas «Correcta», «Con datos del futuro» y «Siempre cero». El evaluador calcula el informe desde los datos originales.
 
 Las respuestas de producción están en `data/new/.respuestas`, en base64 y en el orden del CSV. Eso solo evita leerlas a simple vista; no es seguridad. La evaluación alinea por `order_id` después de rechazar filas e informa cuántas fueron evaluadas.
 
-Compartí la última línea: **«Mi F1 en producción: 0,XX»**. Entregá las seis funciones, tus decisiones en `NOTAS.md` y los cuatro archivos generados de `data/processed/` por el medio indicado por el docente; esos archivos están ignorados por Git.
+La práctica termina cuando ves el antes y el después de las tres etapas en el evaluador. Comparte en voz alta en clase la última línea **«Mi F1 en producción: 0,XX»**.

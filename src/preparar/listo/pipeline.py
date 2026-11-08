@@ -7,9 +7,9 @@ from sklearn.compose import ColumnTransformer
 def ajustar_y_transformar(train: pd.DataFrame, test: pd.DataFrame, pipeline: ColumnTransformer) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Recibe particiones crudas y pipeline; devuelve tablas numéricas con returned.
 
-    Pista: el ajuste ocurre una vez y solo ve train; usá order_id como índice.
+    Pista: ajusta una sola vez con train y usa order_id como índice.
     """
-    # Tampoco se entrega la etiqueta al transformador.
+    # El transformador recibe solo las características, sin la etiqueta.
     entrada_train = train.drop(columns="returned").set_index("order_id")
     entrada_test = test.drop(columns="returned").set_index("order_id")
     pipeline.fit(entrada_train)

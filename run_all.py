@@ -1,4 +1,4 @@
-"""Ejecutá python run_all.py desde la raíz: base preparada y tres etapas."""
+"""Ejecuta python run_all.py desde la raíz para ver cómo se preparan los datos."""
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
@@ -11,6 +11,7 @@ from preparar.listo.enriquecer import precio_unitario
 from preparar.listo.pipeline import ajustar_y_transformar
 from preparar.listo.cargar import guardar
 from preparar.listo.estado import ejecutar_etapa, EtapaPendiente
+from preparar.listo.reporte import porcentaje
 from preparar.faltantes import agregar_indicador_faltante, comparar_tasa
 from preparar.enriquecer import dias_desde_registro, quitar_filtracion
 from preparar.pipeline import separar, construir_pipeline
@@ -33,7 +34,7 @@ def main():
     print(f"Listo · Validar: {rechazadas} rechazadas, {limitadas} descuentos limitados -> {len(tabla)} filas")
     tabla = ejecutar_etapa(1, agregar_indicador_faltante, tabla, "phone")
     tasas = ejecutar_etapa(1, comparar_tasa, tabla, "phone_missing")
-    print(f"Etapa 1 · Faltantes: {len(tabla)} filas; sin teléfono {tasas[1]:.1%}, con teléfono {tasas[0]:.1%}")
+    print(f"Etapa 1 · Faltantes: {len(tabla)} filas. Sin teléfono {porcentaje(tasas[1])}, con teléfono {porcentaje(tasas[0])}.")
     tabla = ejecutar_etapa(2, dias_desde_registro, tabla)
     tabla = precio_unitario(tabla)
     tabla = ejecutar_etapa(2, quitar_filtracion, tabla)
@@ -53,5 +54,5 @@ if __name__ == "__main__":
         print(error)
         sys.exit(1)
     except FileNotFoundError:
-        print("Faltan datos locales. Revisá data/raw y volvé a ejecutar python run_all.py.")
+        print("Faltan datos locales. Revisa data/raw y vuelve a ejecutar python run_all.py.")
         sys.exit(1)
