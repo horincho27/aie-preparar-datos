@@ -6,12 +6,12 @@ class EtapaPendiente(NotImplementedError):
 
     def __init__(self, numero):
         nombres = {1: "el dato que falta", 2: "la columna que hace trampa", 3: "separar y preparar sin filtración"}
-        super().__init__(f"Falta completar la etapa {numero}: {nombres[numero]}. Revisá sus funciones y tests.")
+        super().__init__(f"Falta completar la etapa {numero}: {nombres[numero]}. Revisa sus funciones y pruebas.")
 
 
-def ejecutar_etapa(numero, funcion, *argumentos):
+def ejecutar_etapa(numero, funcion, *argumentos, **opciones):
     """Llama una función del alumno e identifica su etapa si todavía está vacía."""
     try:
-        return funcion(*argumentos)
+        return funcion(*argumentos, **opciones)
     except NotImplementedError as error:
         raise EtapaPendiente(numero) from error

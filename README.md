@@ -72,13 +72,13 @@ python evaluar.py
 
 ## Cómo leer la evaluación
 
-`python evaluar.py` compara **Tu prueba** con **Producción** usando siempre `LogisticRegression(max_iter=1000, random_state=42)`. El modelo se estudia en **Modelos de clasificación**; hoy medimos preparación, no elegimos algoritmos.
+`python evaluar.py` muestra el antes y el después de cada etapa completa. Usa siempre `LogisticRegression(max_iter=1000, random_state=42)` y mantiene las otras etapas fijas con la referencia de `listo/`. El modelo se estudia en **Modelos de clasificación**. En esta práctica se mide el efecto de la preparación.
 
 - **F1:** puntaje principal; combina cuántas devoluciones detectamos y cuántas alertas eran correctas.
 - **Devoluciones detectadas:** cuántas encontró entre todas las devoluciones reales, por ejemplo «13 de 33».
 - **Exactitud:** proporción total de aciertos. Sola engaña: decir «nadie devuelve» ya acierta alrededor del 80 %, pero detecta cero devoluciones y obtiene F1=0.
 
-Si el F1 de prueba supera al de producción por más de 0,15, el programa pide revisar la etapa 2. Si falta una función, indica cuál de las tres etapas está pendiente, en español. Cuando las tres estén completas, si faltan los archivos guardados, pide correr `run_all.py`.
+Puedes correr el evaluador después de cada etapa. Si hay funciones pendientes, indica la primera etapa que falta. Cuando las tres están completas, aparece una tabla con la preparación correcta, la preparación que usa información futura y la predicción de siempre cero. El evaluador calcula el informe desde los datos originales. `run_all.py` genera los cuatro archivos de entrega.
 
 Las respuestas de producción están en `data/new/.respuestas`, en base64 y en el orden del CSV. Eso solo evita leerlas a simple vista; no es seguridad. La evaluación alinea por `order_id` después de rechazar filas e informa cuántas fueron evaluadas.
 

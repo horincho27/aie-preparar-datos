@@ -72,6 +72,13 @@ def aplicar_a_nuevos(path: str | Path, artefactos: str | Path | None = None) -> 
     nuevos = pd.read_csv(ruta, dtype={"price": "string"})
     # La limpieza y las etapas del alumno son las mismas que en entrenamiento.
     tabla, registro = preparar_crudos(nuevos, clientes)
+    resultado = transformar_pedidos(tabla, pipeline)
+    resultado.attrs["registro"] = registro
+    return resultado
+
+
+def transformar_pedidos(tabla: pd.DataFrame, pipeline: ColumnTransformer) -> pd.DataFrame:
+    """Aplica un transformador ya ajustado y conserva el identificador del pedido."""
     entrada = tabla.set_index("order_id")
     # El esquema conserva columnas descartadas por el transformador. No se inventan
     # valores para columnas que el modelo realmente usa: el experimento con fuga
@@ -89,6 +96,8 @@ def aplicar_a_nuevos(path: str | Path, artefactos: str | Path | None = None) -> 
         if columna == "return_reason":
             entrada[columna] = entrada[columna].astype(object)
     # Solo transform: la mediana y la escala ya se aprendieron con train.
-    resultado = pd.DataFrame(pipeline.transform(entrada), columns=pipeline.get_feature_names_out(), index=entrada.index)
-    resultado.attrs["registro"] = registro
-    return resultado
+    return pd.DataFrame(
+        pipeline.transform(entrada),
+        columns=pipeline.get_feature_names_out(),
+        index=entrada.index,
+    )

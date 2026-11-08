@@ -22,10 +22,10 @@ def ajustar_y_transformar(train: pd.DataFrame, test: pd.DataFrame, pipeline: Col
     return salida_train, salida_test
 
 
-def version_mal(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, ColumnTransformer]:
+def version_mal(df: pd.DataFrame, *, particiones=None) -> tuple[pd.DataFrame, pd.DataFrame, ColumnTransformer]:
     """Recibe tabla completa; devuelve train/test preparados y un pipeline con filtración.
 
-    Pista: reproduce a propósito el error de aprender la preparación antes de separar.
+    Si se indican particiones, se conservan los mismos pedidos de la comparación.
     """
     # Las funciones de la etapa 3 las completa el alumno; no se duplican aquí.
     from preparar.pipeline import construir_pipeline, separar
@@ -35,6 +35,9 @@ def version_mal(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, ColumnTra
     pipeline.fit(entrada)  # Error didáctico: el examen participó de la mediana y la escala.
     preparada = pd.DataFrame(pipeline.transform(entrada), columns=pipeline.get_feature_names_out(), index=entrada.index)
     preparada["returned"] = df["returned"].to_numpy()
-    train, test = separar(preparada)
+    if particiones is None:
+        train, test = separar(preparada)
+    else:
+        train, test = (preparada.loc[parte["order_id"]] for parte in particiones)
     return train, test, pipeline
 
