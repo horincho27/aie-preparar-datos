@@ -15,7 +15,9 @@ python -m pytest
 
 En tu equipo, crea un entorno con `python -m venv .venv`. Actívalo con `source .venv/bin/activate` en Linux/macOS o `.venv\Scripts\Activate.ps1` en PowerShell. Después instala los requisitos. Una vez instalados, todos los tests corren sin internet y en menos de 30 segundos.
 
-Al principio pasan `tests/test_listo.py` y `tests/test_estructura.py`. Las pruebas de las tres etapas fallan porque sus funciones están vacías. No hace falta modificar las pruebas ni el modelo de evaluación. Si quieres, anota lo que observes en [NOTAS.md](NOTAS.md).
+Al principio pasan 20 pruebas y fallan 10. Es lo esperado mientras las funciones de las tres etapas están vacías. Ejecuta solo las pruebas de la etapa en curso. Para la etapa 1, usa `pytest tests/test_etapa_1_faltantes.py`. Cada fallo ocupa una línea. Para ver el detalle completo, ejecuta `pytest --tb=long`.
+
+No hace falta modificar las pruebas ni el modelo de evaluación. Si quieres, anota lo que observes en [NOTAS.md](NOTAS.md).
 
 ## Lo que ya está hecho
 
