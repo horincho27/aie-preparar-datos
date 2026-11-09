@@ -66,19 +66,21 @@ Lee CONTEXTO.md. Estoy en la etapa 4. Dame el código para revisar los tipos de 
 
 Escribe una función `preparar(tabla)` en el notebook. Recibe una tabla de pandas y devuelve otra con tus cambios. Conserva `order_id` para seguir cada pedido y `returned` en el histórico. La balanza usa la misma función con pedidos nuevos y compara sus predicciones con respuestas guardadas aparte.
 
-Ejecuta `medir(preparar, etapa=0)` y cambia el número según tu avance. La balanza usa la misma regresión logística en todas las etapas y da más peso a la clase menos frecuente en entrenamiento. Al principio el modelo usa las columnas numéricas completas que encuentra en train. Lee las entradas elegidas y el diagnóstico de texto y vacíos. Si la medición se guarda, podrás comparar el antes y el ahora en pantalla y revisar el historial en `mediciones.csv`. Para verificar el resultado, usa `python evaluar.py N` en la terminal de la raíz y sustituye `N` por tu etapa. `python evaluar.py` revisa hasta la etapa 4.
+Ejecuta `medir(preparar, etapa=0)` y cambia el número según tu avance. La balanza usa la misma regresión logística en todas las etapas y da más peso a la clase menos frecuente en entrenamiento. Sin transformador, usa las columnas numéricas de train. Si faltan campos en producción, los trata como vacíos. Usa cero para los vacíos numéricos solo al medir, sin cambiar las tablas que devolviste. En la etapa 4, tu transformador se ocupa de los vacíos.
+
+Lee las entradas elegidas y el diagnóstico de texto y vacíos. Si la medición se guarda, podrás comparar el antes y el ahora en pantalla y revisar el historial en `mediciones.csv`. Para verificar el resultado, usa `python evaluar.py N` en la terminal de la raíz y sustituye `N` por tu etapa. `python evaluar.py` revisa hasta la etapa 4.
 
 ## Etapa 0 · Haz una primera medición
 
 - **Qué lograr y por qué.** Observa cómo son los pedidos antes de prepararlos. Una primera medición te da un punto de comparación.
-- **Qué debe quedar.** Una función sencilla y una medición guardada. Puedes empezar con algunas columnas numéricas que estén disponibles en ambas tablas. Conserva el identificador y la etiqueta histórica.
-- **Cómo medir.** Prueba `medir(lambda tabla: tabla, etapa=0)` para ver el diagnóstico de los datos crudos. Esta función devuelve la tabla tal cual. Lleva el diagnóstico al agente, pide ayuda para crear `preparar` y vuelve a ejecutar `medir(preparar, etapa=0)`.
+- **Qué debe quedar.** Una medición guardada con `etapa=0`. Conserva el identificador y la etiqueta histórica.
+- **Cómo medir.** Ejecuta `medir(lambda tabla: tabla, etapa=0)`. Esta función devuelve la tabla tal cual. Lee el diagnóstico y guarda este resultado como punto de comparación.
 - **Cómo verificar.** Ejecuta `python evaluar.py 0`.
 
 ## Etapa 1 · Limpia y valida
 
 - **Qué lograr y por qué.** Elimina copias exactas y conserva compras legítimas con otro identificador. Convierte precios y fechas para que se puedan comparar. Unifica categorías en minúsculas y sin espacios en los bordes. Aplica las reglas de negocio para precios, fechas y descuentos.
-- **Qué debe quedar.** `price` numérico, `order_date` como fecha, categorías coherentes, precios conocidos positivos y descuentos entre 0 y 1. Conserva los precios vacíos para la etapa 4. Mantén los campos que necesitas verificar y el mismo esquema en ambas tablas, aparte de la etiqueta.
+- **Qué debe quedar.** `price` numérico, `order_date` como fecha, categorías coherentes, precios conocidos positivos y descuentos entre 0 y 1. Conserva los precios que ya estaban vacíos y las columnas originales de cada tabla. Si un precio es menor o igual a 0 o la fecha es ilegible, quita el pedido. Si un descuento sale de 0 a 1, llévalo al borde sin quitar el pedido.
 - **Cómo medir.** Ejecuta `medir(preparar, etapa=1)` con tu función actualizada. Compara el número de filas y el F1 con tu medición anterior. Si la balanza indica que el modelo aún recibe información que adelanta la respuesta, investígala en la etapa 2.
 - **Cómo verificar.** Ejecuta `python evaluar.py 1`. Lee cuántas filas salieron.
 

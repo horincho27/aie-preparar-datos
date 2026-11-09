@@ -106,9 +106,12 @@ def _entradas(historico, nuevos, ids_train, ids_prueba):
     train = historico.loc[ids_train]
     prueba = historico.loc[ids_prueba]
     # El identificador sirve para alinear filas. La etiqueta es lo que se predice.
+    entradas_train = train.drop(columns="returned")
+    # Solo la entrada del modelo usa el esquema histórico. La tabla del alumno se conserva.
+    entradas_nuevos = nuevos.set_index("order_id").reindex(columns=entradas_train.columns)
     return (
-        train.drop(columns="returned"), prueba.drop(columns="returned"),
-        nuevos.set_index("order_id"), train["returned"], prueba["returned"],
+        entradas_train, prueba.drop(columns="returned"), entradas_nuevos,
+        train["returned"], prueba["returned"],
     )
 
 
@@ -170,13 +173,19 @@ def _numericas_completas(tabla):
     ]
 
 
-def _preparar_entradas(train, prueba, nuevos, transformador):
+def _preparar_entradas(train, prueba, nuevos, transformador, reservadas):
     if transformador is None:
-        # Elegimos las entradas del modelo solo con entrenamiento. No alteramos la tabla.
-        completas = _numericas_completas(train)
-        if not completas:
-            raise ProblemaMedicion("Deja al menos una columna numérica completa para medir.")
-        return (train[completas], prueba[completas], nuevos[completas]), None, None, completas, set()
+        numericas = train.select_dtypes(include="number").columns.tolist()
+        if not numericas:
+            raise ProblemaMedicion("Deja al menos una columna numérica para medir.")
+        matrices = tuple(tabla[numericas].astype(float) for tabla in (train, prueba, nuevos))
+        rellenadas = {columna for matriz in matrices for columna in matriz.columns[matriz.isna().any()]}
+        for columna in numericas:
+            if columna in rellenadas:
+                nombre = _nombre_visible(columna, reservadas)
+                print(f"La balanza rellenó con 0 los vacíos de {nombre} para poder medir. "
+                      "Rellenar bien es parte de tu trabajo en la etapa 4.")
+        return tuple(matriz.fillna(0) for matriz in matrices), None, None, numericas, rellenadas
 
     try:
         check_is_fitted(transformador)
@@ -261,6 +270,9 @@ def _mostrar_entradas(entradas, rellenadas, anteriores, reservadas, tiene_ajuste
             nombres = ", ".join(_nombre_visible(c, reservadas) for c in retiradas)
             print(f"Entradas retiradas · {nombres}.")
     if tiene_ajuste:
+        if rellenadas:
+            nombres = ", ".join(_nombre_visible(c, reservadas) for c in entradas if c in rellenadas)
+            print(f"Vacíos tratados por el transformador · {nombres}.")
         cambio = (
             "El transformador permite usar las entradas nuevas."
             if nuevas else "El transformador prepara las entradas del modelo."
@@ -292,6 +304,9 @@ def medir(preparar, etapa=0, transformador=None):
         nuevos = preparar(crudos_nuevos.copy())
         _revisar_tabla(historico, crudo, "el histórico")
         _revisar_tabla(nuevos, crudos_nuevos, "producción")
+        solo_historico = campos_exclusivos(historico, nuevos)
+        for campo in solo_historico:
+            reservadas.setdefault(campo, f"campo exclusivo del histórico {len(reservadas) + 1}")
         _diagnostico(historico, "Histórico preparado", reservadas)
         _diagnostico(nuevos, "Producción preparada", reservadas)
         if "returned" not in historico:
@@ -301,22 +316,16 @@ def medir(preparar, etapa=0, transformador=None):
         etiquetas = crudo.drop_duplicates("order_id").set_index("order_id")["returned"]
         if not historico["returned"].eq(historico["order_id"].map(etiquetas)).all():
             raise ProblemaMedicion("Conserva los valores originales de returned.")
-        solo_historico = historico.columns.difference([*nuevos.columns, "returned"], sort=False)
-        solo_nuevos = nuevos.columns.difference(historico.columns, sort=False)
-        if len(solo_historico) or len(solo_nuevos):
-            extra_h = ", ".join(_nombre_visible(c, reservadas) for c in solo_historico) or "ninguna"
-            extra_n = ", ".join(_nombre_visible(c, reservadas) for c in solo_nuevos) or "ninguna"
-            print(f"Solo en histórico · {extra_h}. Solo en producción · {extra_n}.")
-            raise ProblemaMedicion(
-                "Haz que preparar devuelva las mismas columnas para las dos tablas, aparte de returned."
-            )
+        for campo in solo_historico:
+            print(f"En producción no existe {reservadas[campo]}: la balanza la trata como vacía, "
+                  "como pasaría con un pedido nuevo.")
 
         ids_train, ids_prueba = separar_pedidos(historico)
         train, prueba, entrada_nuevos, y_train, y_prueba = _entradas(
             historico, nuevos, ids_train, ids_prueba
         )
         matrices, ajuste, evidencia, entradas, rellenadas = _preparar_entradas(
-            train, prueba, entrada_nuevos, transformador
+            train, prueba, entrada_nuevos, transformador, reservadas
         )
         for matriz, nombre in zip(matrices, ("entrenamiento", "prueba", "producción")):
             _revisar_matriz(matriz, nombre)
@@ -342,7 +351,7 @@ def medir(preparar, etapa=0, transformador=None):
             # El verificador mira el resultado al repetir la llamada y al ocultar el futuro.
             repetible = historico.equals(preparar(crudo.copy()))
             sin_informacion = crudo.copy()
-            for columna in reservadas:
+            for columna in campos_exclusivos(crudo, crudos_nuevos):
                 sin_informacion[columna] = pd.NA
             sin_futuro = historico.equals(preparar(sin_informacion))
 

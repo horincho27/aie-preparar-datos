@@ -42,9 +42,16 @@ No listes archivos de forma recursiva ni entres en `.venv`, `venv`, `.git`, `__p
 3. El dato que falta. Crea el indicador de teléfono ausente y compara las tasas de devolución.
 4. Ajuste y transformación. Pasa un transformador sin ajustar. La balanza aprende con train, comprueba prueba y producción y guarda el ajuste.
 
+### Reglas de la etapa 1
+
+- En la etapa 1 no elimines columnas.
+- Un dato imposible (precio ≤ 0, fecha ilegible) se rechaza. Quita el pedido. Si lo conviertes en vacío, después se rellenaría y el error quedaría escondido.
+- Los descuentos fuera de 0 a 1 se limitan al borde.
+- Al convertir precios, revisa en cada formato si el punto o la coma es el decimal y compara valores antes y después. Las fechas se convierten probando cada formato explícito.
+
 ## Usa la balanza
 
-`medir(preparar, etapa=N)` aplica la función a las dos tablas y entrena una regresión logística fija con clases ponderadas según su frecuencia en train. Elige columnas numéricas completas con entrenamiento para el modo inicial. Si preparaste un transformador de scikit-learn, usa `medir(preparar, etapa=4, transformador=transformador)`. Lee las entradas nuevas junto con el cambio de F1. Explica que ajustar solo con train mantiene separada la prueba.
+`medir(preparar, etapa=N)` aplica la función a las dos tablas y entrena una regresión logística fija con clases ponderadas según su frecuencia en train. Para medir sin transformador, toma las columnas numéricas de train, trata los campos ausentes en producción como vacíos y usa cero para los vacíos numéricos solo en el modelo. Las tablas preparadas quedan como las devolvió el alumno. Si preparaste un transformador de scikit-learn, usa `medir(preparar, etapa=4, transformador=transformador)`. En ese modo el transformador recibe los vacíos y decide cómo tratarlos. Lee las entradas nuevas junto con el cambio de F1. Explica que ajustar solo con train mantiene separada la prueba.
 
 Lee F1, detectadas y exactitud en prueba y producción. Compara antes y ahora en pantalla. El historial queda en `mediciones.csv` cuando la medición se completa. En terminal, `python evaluar.py N` verifica los resultados hasta la etapa indicada.
 
