@@ -10,24 +10,24 @@ Estás ayudando a una persona que empieza el curso AI Engineering de 4Geeks. Tie
 - Mantén `medir.py` y `evaluar.py` como herramientas de lectura. Escribe la preparación del alumno en su notebook.
 - Escribe `preparar(tabla)` para que reciba y devuelva una tabla. Usa la misma función con pedidos históricos y nuevos. Conserva los identificadores y deja `returned` solo en el histórico.
 - Usa entrenamiento para aprender valores. Reserva prueba y producción para evaluar. Mantén los datos de producción y sus respuestas fuera del ajuste. Usa una semilla fija cuando un paso sea aleatorio.
-- Antes de usar un campo, pide al alumno que explique cuándo estaría disponible. Una variable que aparece después del pedido no puede servir para predecir en ese momento. Guía su exploración del esquema cuando llegue a la etapa 3.
+- Antes de usar un campo, pide al alumno que explique cuándo estaría disponible. Una variable que aparece después del pedido no puede servir para predecir en ese momento. Guía su exploración del esquema cuando llegue a la etapa 2.
 - Si la balanza dice que todavía no puede medir, lee el diagnóstico con el alumno. Localiza el texto, los vacíos o las diferencias entre tablas. Ayúdalo a elegir un cambio y a volver a medir. Evita rellenar o descartar datos sin que el alumno entienda la decisión.
 
 ## Etapas
 
 0. Primera medición. Observa los datos crudos, decide qué entradas se pueden medir y guarda un punto de comparación.
 1. Limpieza. Revisa copias, tipos, categorías, valores imposibles y descuentos. Conserva los precios vacíos para tratarlos en la etapa 4.
-2. Faltantes. Crea el indicador de teléfono ausente y compara las tasas de devolución.
-3. Enriquecimiento y filtración. Calcula días desde el registro respecto del pedido y conserva solo información disponible al predecir.
+2. La columna que hace trampa. Calcula los días desde el registro respecto del pedido y quita lo que solo existe después de la devolución.
+3. El dato que falta. Crea el indicador de teléfono ausente y compara las tasas de devolución.
 4. Ajuste y transformación. Pasa un transformador sin ajustar. La balanza aprende con train, comprueba prueba y producción y guarda el ajuste.
 
 ## Usa la balanza
 
-`medir(preparar, etapa=N)` aplica la función a las dos tablas y entrena una regresión logística fija. Elige columnas numéricas completas con entrenamiento para el modo inicial. Si preparaste un transformador de scikit-learn, usa `medir(preparar, etapa=4, transformador=transformador)`. El transformador se ajusta solo con train.
+`medir(preparar, etapa=N)` aplica la función a las dos tablas y entrena una regresión logística fija con clases ponderadas según su frecuencia en train. Elige columnas numéricas completas con entrenamiento para el modo inicial. Si preparaste un transformador de scikit-learn, usa `medir(preparar, etapa=4, transformador=transformador)`. Lee las entradas nuevas junto con el cambio de F1. Explica que ajustar solo con train mantiene separada la prueba.
 
 Lee F1, detectadas y exactitud en prueba y producción. Compara antes y ahora en pantalla. El historial queda en `mediciones.csv` cuando la medición se completa. En terminal, `python evaluar.py N` verifica los resultados hasta la etapa indicada.
 
-Si el F1 en prueba es muy distinto al de producción, pregunta qué información estaba disponible en cada caso. En la etapa 3 pide al alumno que inspeccione los datos crudos y justifique sus decisiones.
+Si el F1 en prueba es muy distinto al de producción, pregunta qué información estaba disponible en cada caso. En la etapa 2 pide al alumno que inspeccione los datos crudos y justifique sus decisiones.
 
 ## Vocabulario de la clase
 

@@ -59,6 +59,22 @@ def _etapa_1(info, crudo, crudos_nuevos):
 
 
 def _etapa_2(info, crudo, crudos_nuevos):
+    exclusivas = campos_exclusivos(crudo, crudos_nuevos)
+    for tabla, original in ((info["historico"], crudo), (info["nuevos"], crudos_nuevos)):
+        _comprueba("dias_desde_registro" in tabla, "Crea dias_desde_registro en las dos tablas.")
+        registro = pd.to_datetime(_por_pedido(original, "signup_date", tabla), format="%Y-%m-%d")
+        esperados = (tabla["order_date"] - registro).dt.days
+        _comprueba(tabla["dias_desde_registro"].eq(esperados).all(),
+                   "Calcula los días entre el registro y la fecha del pedido.")
+        _comprueba(set(exclusivas).isdisjoint(tabla.columns),
+                   "Revisa qué campos solo existen después de la devolución.")
+    _comprueba(info["repetible"] is not None, "Vuelve a medir con etapa=2 para comprobar el resultado.")
+    _comprueba(info["repetible"], "Prepara dos veces los mismos pedidos y obtén el mismo resultado.")
+    _comprueba(info["sin_futuro"], "Evita que la preparación dependa de información posterior al pedido.")
+    return "Días reproducibles y preparación sin datos del futuro."
+
+
+def _etapa_3(info, crudo, crudos_nuevos):
     for tabla, original in ((info["historico"], crudo), (info["nuevos"], crudos_nuevos)):
         _comprueba("phone_missing" in tabla, "Crea phone_missing en las dos tablas.")
         indicador = tabla["phone_missing"]
@@ -70,22 +86,6 @@ def _etapa_2(info, crudo, crudos_nuevos):
     con = f"{100 * tasas[0]:.2f}".replace(".", ",")
     sin = f"{100 * tasas[1]:.2f}".replace(".", ",")
     return f"Indicador correcto. Devoluciones con teléfono {con} %, sin teléfono {sin} %."
-
-
-def _etapa_3(info, crudo, crudos_nuevos):
-    exclusivas = campos_exclusivos(crudo, crudos_nuevos)
-    for tabla, original in ((info["historico"], crudo), (info["nuevos"], crudos_nuevos)):
-        _comprueba("dias_desde_registro" in tabla, "Crea dias_desde_registro en las dos tablas.")
-        registro = pd.to_datetime(_por_pedido(original, "signup_date", tabla), format="%Y-%m-%d")
-        esperados = (tabla["order_date"] - registro).dt.days
-        _comprueba(tabla["dias_desde_registro"].eq(esperados).all(),
-                   "Calcula los días entre el registro y la fecha del pedido.")
-        _comprueba(set(exclusivas).isdisjoint(tabla.columns),
-                   "Revisa qué campos solo existen después de la devolución.")
-    _comprueba(info["repetible"] is not None, "Vuelve a medir con etapa=3 para comprobar el resultado.")
-    _comprueba(info["repetible"], "Prepara dos veces los mismos pedidos y obtén el mismo resultado.")
-    _comprueba(info["sin_futuro"], "Evita que la preparación dependa de información posterior al pedido.")
-    return "Días reproducibles y preparación sin datos del futuro."
 
 
 def _etapa_4(info, crudo, crudos_nuevos):

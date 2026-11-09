@@ -6,6 +6,6 @@ Si quieres, usa estas preguntas para registrar lo que observas.
 | --- | --- | --- | --- | --- |
 | 0 · Primera medición | | | | |
 | 1 · Limpieza y validación | | | | |
-| 2 · Datos faltantes | | | | |
-| 3 · Enriquecimiento y filtración | | | | |
+| 2 · La columna que hace trampa | | | | |
+| 3 · El dato que falta | | | | |
 | 4 · Ajuste y transformación | | | | |

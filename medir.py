@@ -11,10 +11,13 @@ import numpy as np
 import pandas as pd
 from scipy import sparse
 from sklearn.base import clone
+from sklearn.compose import ColumnTransformer
 from sklearn.exceptions import NotFittedError
+from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
 from sklearn.utils.validation import check_is_fitted
 
 
@@ -47,7 +50,7 @@ def campos_exclusivos(historico, nuevos):
 
 
 def _nombre_visible(columna, reservadas):
-    # El diagnóstico localiza los problemas sin anticipar la respuesta de la etapa 3.
+    # El diagnóstico localiza los problemas sin anticipar la respuesta de la etapa 2.
     return reservadas.get(columna, str(columna))
 
 
@@ -105,18 +108,60 @@ def _revisar_matriz(matriz, nombre):
         )
 
 
-def _preparar_entradas(train, prueba, nuevos, transformador, reservadas):
+def _seleccionar_columnas(columnas, seleccion):
+    """Lee los nombres de origen de un selector del transformador."""
+    if isinstance(seleccion, str):
+        return [seleccion]
+    if isinstance(seleccion, (int, np.integer)):
+        return [columnas[seleccion]]
+    if isinstance(seleccion, slice):
+        if isinstance(seleccion.start, str) or isinstance(seleccion.stop, str):
+            seleccion = columnas.slice_indexer(seleccion.start, seleccion.stop, seleccion.step)
+        return columnas[seleccion].tolist()
+    seleccion = list(seleccion)
+    if not seleccion or isinstance(seleccion[0], str):
+        return seleccion
+    return columnas[seleccion].tolist()
+
+
+def _entradas_del_ajuste(ajuste, tabla):
+    if isinstance(ajuste, ColumnTransformer):
+        entradas = []
+        rellenadas = set()
+        for nombre, paso, seleccion in ajuste.transformers_:
+            salida = ajuste.output_indices_[nombre]
+            if salida.start == salida.stop:
+                continue
+            columnas = _seleccionar_columnas(tabla.columns, seleccion)
+            usadas, llenas = _entradas_del_ajuste(paso, tabla[columnas])
+            entradas.extend(usadas)
+            rellenadas.update(llenas)
+        return list(dict.fromkeys(entradas)), rellenadas
+    if isinstance(ajuste, Pipeline):
+        # El primer paso recibe las columnas originales de esta rama.
+        primero = next(
+            (paso for paso in ajuste.named_steps.values() if paso not in (None, "passthrough")),
+            None,
+        )
+        return _entradas_del_ajuste(primero, tabla)
+    rellenadas = set(tabla.columns[tabla.isna().any()]) if isinstance(ajuste, SimpleImputer) else set()
+    return tabla.columns.tolist(), rellenadas
+
+
+def _numericas_completas(tabla):
+    numericas = tabla.select_dtypes(include="number")
+    return [
+        c for c in numericas if np.isfinite(numericas[c].to_numpy(dtype=float, na_value=np.nan)).all()
+    ]
+
+
+def _preparar_entradas(train, prueba, nuevos, transformador):
     if transformador is None:
         # Elegimos las entradas del modelo solo con entrenamiento. No alteramos la tabla.
-        numericas = train.select_dtypes(include="number")
-        completas = [
-            c for c in numericas if np.isfinite(numericas[c].to_numpy(dtype=float, na_value=np.nan)).all()
-        ]
+        completas = _numericas_completas(train)
         if not completas:
             raise ProblemaMedicion("Deja al menos una columna numérica completa para medir.")
-        usadas = ", ".join(_nombre_visible(c, reservadas) for c in completas)
-        print(f"Entradas del modelo · {usadas}.")
-        return (train[completas], prueba[completas], nuevos[completas]), None, None
+        return (train[completas], prueba[completas], nuevos[completas]), None, None, completas, set()
 
     try:
         check_is_fitted(transformador)
@@ -132,8 +177,9 @@ def _preparar_entradas(train, prueba, nuevos, transformador, reservadas):
     if joblib.hash(ajuste) != estado:
         raise ProblemaMedicion("Transformar cambió el ajuste. Revisa que transform solo aplique lo aprendido.")
     evidencia = {"ids": train.index.unique().tolist(), "estado": estado}
+    entradas, rellenadas = _entradas_del_ajuste(ajuste, train)
     print(f"Transformador · Ajustado con {len(train)} filas de entrenamiento.")
-    return matrices, ajuste, evidencia
+    return matrices, ajuste, evidencia, entradas, rellenadas
 
 
 def _respuestas(crudos_nuevos, ids):
@@ -157,6 +203,54 @@ def leer_historial():
         return []
     with HISTORIAL.open(encoding="utf-8", newline="") as archivo:
         return list(csv.DictReader(archivo))
+
+
+def _medicion_anterior(anterior):
+    if anterior is None or not ULTIMA.is_file():
+        return {}
+    try:
+        info = joblib.load(ULTIMA)
+        if info["registro"]["fecha"] == anterior["fecha"]:
+            # Las mediciones anteriores al cambio no guardaban sus entradas por separado.
+            if "entradas_modelo" not in info:
+                train = _entradas(
+                    info["historico"], info["nuevos"], info["ids_train"], info["ids_prueba"]
+                )[0]
+                if info["ajuste"] is None:
+                    info["entradas_modelo"] = _numericas_completas(train)
+                elif PREPARACION.is_file():
+                    ajuste = joblib.load(PREPARACION)
+                    if joblib.hash(ajuste) == info["ajuste"]["estado"]:
+                        info["entradas_modelo"] = _entradas_del_ajuste(ajuste, train)[0]
+            return info
+    except Exception:
+        # El historial de puntajes sigue disponible aunque falte el detalle de entradas.
+        pass
+    return {}
+
+
+def _mostrar_entradas(entradas, rellenadas, anteriores, reservadas, tiene_ajuste):
+    usadas = ", ".join(_nombre_visible(c, reservadas) for c in entradas)
+    print(f"Entradas del modelo · {usadas}.")
+    nuevas = []
+    if anteriores is not None:
+        nuevas = [c for c in entradas if c not in anteriores]
+        retiradas = [c for c in anteriores if c not in entradas]
+        if nuevas:
+            nombres = ", ".join(
+                _nombre_visible(c, reservadas) + (" (con vacíos rellenados)" if c in rellenadas else "")
+                for c in nuevas
+            )
+            print(f"Nuevas entradas: {nombres}.")
+        if retiradas:
+            nombres = ", ".join(_nombre_visible(c, reservadas) for c in retiradas)
+            print(f"Entradas retiradas · {nombres}.")
+    if tiene_ajuste:
+        cambio = (
+            "El transformador permite usar las entradas nuevas."
+            if nuevas else "El transformador prepara las entradas del modelo."
+        )
+        print(f"Qué cambió · {cambio} El ajuste se hizo solo con train para mantener la prueba separada.")
 
 
 def _resumen(fila, conjunto):
@@ -209,12 +303,19 @@ def medir(preparar, etapa=0, transformador=None):
         train, prueba, entrada_nuevos, y_train, y_prueba = _entradas(
             historico, nuevos, ids_train, ids_prueba
         )
-        matrices, ajuste, evidencia = _preparar_entradas(
-            train, prueba, entrada_nuevos, transformador, reservadas
+        matrices, ajuste, evidencia, entradas, rellenadas = _preparar_entradas(
+            train, prueba, entrada_nuevos, transformador
         )
         for matriz, nombre in zip(matrices, ("entrenamiento", "prueba", "producción")):
             _revisar_matriz(matriz, nombre)
-        modelo = LogisticRegression(max_iter=1000, random_state=42)
+        historial = leer_historial()
+        anterior = historial[-1] if historial else None
+        info_anterior = _medicion_anterior(anterior)
+        _mostrar_entradas(
+            entradas, rellenadas, info_anterior.get("entradas_modelo"), reservadas, ajuste is not None
+        )
+        # La clase menos frecuente recibe más peso según sus ejemplos en entrenamiento.
+        modelo = LogisticRegression(max_iter=1000, random_state=42, class_weight="balanced")
         modelo.fit(matrices[0], y_train)
         y_nuevos = _respuestas(crudos_nuevos, entrada_nuevos.index)
         fila = {"etapa": etapa, "fecha": datetime.now(timezone.utc).isoformat()}
@@ -225,7 +326,7 @@ def medir(preparar, etapa=0, transformador=None):
                 fila[f"{nombre}_{conjunto}"] = valor
 
         repetible = sin_futuro = None
-        if etapa >= 3:
+        if etapa >= 2:
             # El verificador mira el resultado al repetir la llamada y al ocultar el futuro.
             repetible = historico.equals(preparar(crudo.copy()))
             sin_informacion = crudo.copy()
@@ -233,7 +334,6 @@ def medir(preparar, etapa=0, transformador=None):
                 sin_informacion[columna] = pd.NA
             sin_futuro = historico.equals(preparar(sin_informacion))
 
-        historial = leer_historial()
         PROCESADOS.mkdir(parents=True, exist_ok=True)
         if ajuste is not None:
             joblib.dump(ajuste, PREPARACION)
@@ -241,6 +341,7 @@ def medir(preparar, etapa=0, transformador=None):
             "registro": fila, "historico": historico, "nuevos": nuevos,
             "ids_train": ids_train, "ids_prueba": ids_prueba,
             "repetible": repetible, "sin_futuro": sin_futuro, "ajuste": evidencia,
+            "entradas_modelo": entradas, "ponderacion": "balanced",
         }, ULTIMA)
         with HISTORIAL.open("a", encoding="utf-8", newline="") as archivo:
             escritor = csv.DictWriter(archivo, fieldnames=list(fila))
@@ -258,8 +359,15 @@ def medir(preparar, etapa=0, transformador=None):
         print(f"Aún no se puede medir. Revisa preparar y el diagnóstico con tu agente. {detalle}")
         return None
 
-    anterior = historial[-1] if historial else None
     print(f"Medición guardada · Etapa {etapa}.")
+    if info_anterior and info_anterior.get("ponderacion") != "balanced":
+        print("La medición anterior corresponde a la versión del modelo sin ponderación de clases.")
     for conjunto, nombre in (("prueba", "Prueba"), ("produccion", "Producción")):
         print(f"{nombre} · Antes {_resumen(anterior, conjunto)}. Ahora {_resumen(fila, conjunto)}.")
+    if (
+        etapa == 1 and anterior and set(entradas).intersection(exclusivas)
+        and fila["f1_prueba"] > fila["f1_produccion"]
+        and all(fila[c] == float(anterior[c]) for c in ("f1_prueba", "f1_produccion"))
+    ):
+        print("El F1 todavía no cambia. El modelo sigue usando información que le adelanta la respuesta.")
     return fila
