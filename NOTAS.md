@@ -1,8 +1,11 @@
 # Notas de la práctica
 
-Si quieres, anota lo que observes mientras completas las etapas.
+Si quieres, usa estas preguntas para registrar lo que observas.
 
-- Etapa 1: ¿qué diferencia hay entre las tasas con y sin teléfono?
-- Etapa 2: ¿qué columnas existen cuando llega un pedido nuevo y cuáles revelan el futuro?
-- Etapa 3: ¿qué aprende el transformador y con qué filas debería aprenderlo?
-- Resultado: ¿qué observas al comparar el F1 en prueba y en producción?
+| Etapa | Qué le pediste al agente | Qué cambió | Qué mediste | Qué concluyes |
+| --- | --- | --- | --- | --- |
+| 0 · Primera medición | | | | |
+| 1 · Limpieza y validación | | | | |
+| 2 · Datos faltantes | | | | |
+| 3 · Enriquecimiento y filtración | | | | |
+| 4 · Ajuste y transformación | | | | |

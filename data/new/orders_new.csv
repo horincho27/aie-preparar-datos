@@ -1,201 +1,201 @@
 order_id,customer_id,order_date,category,payment_method,price,quantity,discount,shipping_city
 N00000,C0100,2026-03-15,Deportes,efectivo,3845.61,4,0.38,Mendoza
-N00001,C0186,2026-05-11,Deportes,tarjeta,"$2,664.48",2,0.21,Rosario
-N00002,C0383,2026-04-16,Deportes,tarjeta,"1317,14",4,0.05,Buenos Aires
+N00001,C0186,2026-05-11,Deportes,tarjeta,"2664,48",2,0.21,Rosario
+N00002,C0383,2026-04-16,Deportes,tarjeta,1317.14,4,0.05,Buenos Aires
 N00003,C0314,2026-05-29,Deportes,tarjeta,250.52,1,0.45,Buenos Aires
-N00004,C0375,2026-04-09,Deportes,tarjeta,$736.65,1,0.44,Rosario
-N00005,C0293,2026-04-11,Deportes,tarjeta,"2086,52",3,0.55,Córdoba
-N00006,C0362,2026-04-20,Deportes,tarjeta,467.06,1,0.44,Rosario
-N00007,C0020,2026-04-04,Deportes,efectivo,"$1,137.75",1,0.5,Mendoza
-N00008,C0297,2026-04-10,ELECTRÓNICA,efectivo,"396,35",2,0.45,Mendoza
+N00004,C0375,2026-04-09,Deportes,tarjeta,736.65,1,0.44,Rosario
+N00005,C0293,2026-04-11,Deportes,tarjeta,2086.52,3,0.55,Córdoba
+N00006,C0362,2026-04-20,Deportes,tarjeta,"467,06",1,0.44,Rosario
+N00007,C0020,2026-04-04,Deportes,efectivo,1137.75,1,0.5,Mendoza
+N00008,C0297,2026-04-10,ELECTRÓNICA,efectivo,396.35,2,0.45,Mendoza
 N00009,C0392,2026-05-24,Libros,tarjeta,939.69,2,0.38,Rosario
-N00010,C0395,2026-04-26,ropa ,transferencia,"$1,455.92",3,0.26,Buenos Aires
+N00010,C0395,2026-04-26,ropa ,transferencia,1455.92,3,0.26,Buenos Aires
 N00011,C0009,2026-04-07,ELECTRÓNICA,tarjeta,"688,84",3,0.54,Rosario
 N00012,C0186,2026-05-11,Ropa,transferencia,5272.12,3,0.39,Mendoza
-N00013,C0132,2026-03-08,hogar ,transferencia,$824.79,3,0.24,Rosario
-N00014,C0032,2026-05-13,ELECTRÓNICA,tarjeta,"907,53",2,0.05,Córdoba
+N00013,C0132,2026-03-08,hogar ,transferencia,824.79,3,0.24,Rosario
+N00014,C0032,2026-05-13,ELECTRÓNICA,tarjeta,907.53,2,0.05,Córdoba
 N00015,C0068,2026-05-02,Ropa,transferencia,3600.40,3,0.17,Rosario
-N00016,C0079,2026-05-26,libros ,transferencia,"$3,036.75",3,0.33,Buenos Aires
-N00017,C0190,2026-03-04,ELECTRÓNICA,tarjeta,"323,66",1,0.17,Córdoba
+N00016,C0079,2026-05-26,libros ,transferencia,"3036,75",3,0.33,Buenos Aires
+N00017,C0190,2026-03-04,ELECTRÓNICA,tarjeta,323.66,1,0.17,Córdoba
 N00018,C0100,2026-04-17,Ropa,efectivo,3109.54,3,0.13,Mendoza
-N00019,C0284,2026-04-21,electrónica ,efectivo,"$3,212.02",4,0.32,Rosario
-N00020,C0220,2026-04-07,HOGAR,tarjeta,"3030,47",1,0.1,Buenos Aires
-N00021,C0389,2026-05-26,Ropa,transferencia,1729.71,2,0.48,Buenos Aires
-N00022,C0052,2026-03-05,electrónica ,efectivo,"$2,427.18",4,0.29,Mendoza
-N00023,C0159,2026-05-24,ROPA,tarjeta,"1143,54",3,0.34,Rosario
+N00019,C0284,2026-04-21,electrónica ,efectivo,3212.02,4,0.32,Rosario
+N00020,C0220,2026-04-07,HOGAR,tarjeta,3030.47,1,0.1,Buenos Aires
+N00021,C0389,2026-05-26,Ropa,transferencia,"1729,71",2,0.48,Buenos Aires
+N00022,C0052,2026-03-05,electrónica ,efectivo,2427.18,4,0.29,Mendoza
+N00023,C0159,2026-05-24,ROPA,tarjeta,1143.54,3,0.34,Rosario
 N00024,C0379,2026-05-09,Electrónica,tarjeta,410.03,1,0.09,Buenos Aires
-N00025,C0041,2026-05-20,hogar ,tarjeta,"$1,166.62",3,0.19,Córdoba
+N00025,C0041,2026-05-20,hogar ,tarjeta,1166.62,3,0.19,Córdoba
 N00026,C0046,2026-05-28,ELECTRÓNICA,efectivo,"1621,67",1,0.25,Rosario
 N00027,C0158,2026-03-24,Electrónica,transferencia,2018.87,3,0.48,Mendoza
-N00028,C0183,2026-05-25,ropa ,tarjeta,"$3,841.83",4,0.46,Córdoba
-N00029,C0245,2026-05-16,ROPA,efectivo,"3559,62",2,0.13,Rosario
+N00028,C0183,2026-05-25,ropa ,tarjeta,3841.83,4,0.46,Córdoba
+N00029,C0245,2026-05-16,ROPA,efectivo,3559.62,2,0.13,Rosario
 N00030,C0010,2026-03-17,Ropa,transferencia,574.38,4,0.37,Buenos Aires
-N00031,C0153,2026-05-17,electrónica ,efectivo,"$6,109.27",4,0.15,Mendoza
-N00032,C0219,29/05/2026,ELECTRÓNICA,tarjeta,"1379,06",2,0.59,Mendoza
+N00031,C0153,2026-05-17,electrónica ,efectivo,"6109,27",4,0.15,Mendoza
+N00032,C0219,29/05/2026,ELECTRÓNICA,tarjeta,1379.06,2,0.59,Mendoza
 N00033,C0154,2026-05-22,Libros,tarjeta,882.52,1,0.57,Rosario
-N00034,C0338,2026-03-26,ropa ,transferencia,$388.21,1,0.34,Mendoza
-N00035,C0364,2026-03-03,ELECTRÓNICA,tarjeta,"814,29",2,0.42,Córdoba
-N00036,C0282,2026-03-02,Electrónica,transferencia,2741.78,3,0.48,Rosario
-N00037,C0186,2026-05-31,electrónica ,transferencia,"$3,133.76",1,0.43,Córdoba
-N00038,C0061,2026-03-02,LIBROS,tarjeta,"5107,41",4,0.42,Mendoza
+N00034,C0338,2026-03-26,ropa ,transferencia,388.21,1,0.34,Mendoza
+N00035,C0364,2026-03-03,ELECTRÓNICA,tarjeta,814.29,2,0.42,Córdoba
+N00036,C0282,2026-03-02,Electrónica,transferencia,"2741,78",3,0.48,Rosario
+N00037,C0186,2026-05-31,electrónica ,transferencia,3133.76,1,0.43,Córdoba
+N00038,C0061,2026-03-02,LIBROS,tarjeta,5107.41,4,0.42,Mendoza
 N00039,C0147,2026-03-22,Ropa,transferencia,3028.24,2,0.58,Mendoza
-N00040,C0386,2026-05-10,ropa ,tarjeta,"$2,348.41",4,0.36,Mendoza
+N00040,C0386,2026-05-10,ropa ,tarjeta,2348.41,4,0.36,Mendoza
 N00041,C0143,2026-03-04,HOGAR,tarjeta,"450,28",1,0.38,Córdoba
 N00042,C0102,2026-04-07,Ropa,tarjeta,,2,0.51,Mendoza
-N00043,C0299,2026-05-23,ropa ,tarjeta,$968.52,2,0.4,Rosario
-N00044,C0092,2026-05-09,ROPA,tarjeta,"175,16",1,0.44,Buenos Aires
-N00045,C0285,sin fecha,Ropa,transferencia,415.22,1,0.14,Rosario
-N00046,C0118,2026-04-21,hogar ,transferencia,$924.19,2,0.22,Buenos Aires
-N00047,C0028,2026-03-31,ROPA,tarjeta,"1780,46",3,0.09,Mendoza
+N00043,C0299,2026-05-23,ropa ,tarjeta,968.52,2,0.4,Rosario
+N00044,C0092,2026-05-09,ROPA,tarjeta,175.16,1,0.44,Buenos Aires
+N00045,C0285,12/05/2026,Ropa,transferencia,415.22,1,0.14,Rosario
+N00046,C0118,2026-04-21,hogar ,transferencia,"924,19",2,0.22,Buenos Aires
+N00047,C0028,2026-03-31,ROPA,tarjeta,1780.46,3,0.09,Mendoza
 N00048,C0029,2026-03-26,Electrónica,transferencia,1449.23,2,0.3,Rosario
-N00049,C0359,2026-04-05,electrónica ,tarjeta,"$2,525.53",3,0.27,Córdoba
-N00050,C0365,2026-03-26,ELECTRÓNICA,tarjeta,"2634,88",4,0.6,Buenos Aires
+N00049,C0359,2026-04-05,electrónica ,tarjeta,2525.53,3,0.27,Córdoba
+N00050,C0365,2026-03-26,ELECTRÓNICA,tarjeta,2634.88,4,0.6,Buenos Aires
 N00051,C0287,2026-03-28,Libros,transferencia,,3,0.37,Córdoba
-N00052,C0137,2026-03-05,ropa ,transferencia,$556.92,3,0.47,Buenos Aires
-N00053,C0050,2026-05-13,LIBROS,transferencia,"457,62",1,0.2,Mendoza
+N00052,C0137,2026-03-05,ropa ,transferencia,556.92,3,0.47,Buenos Aires
+N00053,C0050,2026-05-13,LIBROS,transferencia,457.62,1,0.2,Mendoza
 N00054,C0391,2026-03-18,Electrónica,tarjeta,707.02,2,0.5,Rosario
-N00055,C0291,2026-03-15,hogar ,transferencia,"$3,601.98",4,0.37,Buenos Aires
+N00055,C0291,2026-03-15,hogar ,transferencia,3601.98,4,0.37,Buenos Aires
 N00056,C0233,2026-04-26,ELECTRÓNICA,transferencia,"2402,31",2,0.42,Rosario
 N00057,C0054,2026-03-05,Electrónica,efectivo,3672.70,3,0.18,Buenos Aires
-N00058,C0291,2026-04-06,libros ,tarjeta,"$3,263.75",3,0.33,Buenos Aires
-N00059,C0239,2026-05-25,LIBROS,transferencia,"-25,00",3,0.38,Mendoza
+N00058,C0291,2026-04-06,libros ,tarjeta,3263.75,3,0.33,Buenos Aires
+N00059,C0239,2026-05-25,LIBROS,transferencia,-25.00,3,0.38,Mendoza
 N00060,C0311,2026-05-25,Ropa,transferencia,947.55,2,0.35,Buenos Aires
-N00061,C0035,2026-03-22,ropa ,efectivo,"$1,227.82",3,0.55,Córdoba
-N00062,C0088,2026-04-21,ELECTRÓNICA,tarjeta,"499,33",2,0.54,Buenos Aires
+N00061,C0035,2026-03-22,ropa ,efectivo,"1227,82",3,0.55,Córdoba
+N00062,C0088,2026-04-21,ELECTRÓNICA,tarjeta,499.33,2,0.54,Buenos Aires
 N00063,C0211,2026-03-15,Libros,tarjeta,5069.51,4,0.58,Buenos Aires
-N00064,C0317,17/03/2026,ropa ,tarjeta,"$2,374.95",4,0.4,Buenos Aires
-N00065,C0364,2026-04-20,HOGAR,tarjeta,"591,72",2,0.58,Mendoza
-N00066,C0244,2026-04-14,Hogar,tarjeta,1554.76,4,0.5,Rosario
-N00067,C0086,2026-05-02,hogar ,tarjeta,$378.60,1,0.16,Rosario
-N00068,C0239,2026-03-28,ELECTRÓNICA,transferencia,"2052,02",3,0.26,Mendoza
+N00064,C0317,17/03/2026,ropa ,tarjeta,2374.95,4,0.4,Buenos Aires
+N00065,C0364,2026-04-20,HOGAR,tarjeta,591.72,2,0.58,Mendoza
+N00066,C0244,2026-04-14,Hogar,tarjeta,"1554,76",4,0.5,Rosario
+N00067,C0086,2026-05-02,hogar ,tarjeta,378.60,1,0.16,Rosario
+N00068,C0239,2026-03-28,ELECTRÓNICA,transferencia,2052.02,3,0.26,Mendoza
 N00069,C0319,2026-04-28,Electrónica,tarjeta,3993.67,3,0.14,Córdoba
-N00070,C0187,2026-05-25,libros ,tarjeta,"$1,591.48",3,0.0,Córdoba
+N00070,C0187,2026-05-25,libros ,tarjeta,1591.48,3,0.0,Córdoba
 N00071,C0056,2026-03-21,HOGAR,tarjeta,"153,83",1,0.11,Mendoza
 N00072,C0112,2026-04-11,Hogar,tarjeta,1764.54,3,0.0,Rosario
-N00073,C0222,2026-05-20,ropa ,efectivo,"$1,201.85",2,0.43,Córdoba
-N00074,C0069,2026-05-08,HOGAR,transferencia,"1724,02",3,0.26,Mendoza
-N00075,C0226,21/05/2026,Ropa,transferencia,884.74,2,0.19,Rosario
-N00076,C0255,2026-03-17,ropa ,tarjeta,"$3,064.47",4,0.46,Córdoba
-N00077,C0179,2026-05-07,HOGAR,efectivo,"1388,72",2,0.5,Córdoba
+N00073,C0222,2026-05-20,ropa ,efectivo,1201.85,2,0.43,Córdoba
+N00074,C0069,2026-05-08,HOGAR,transferencia,1724.02,3,0.26,Mendoza
+N00075,C0226,2026-05-21,Ropa,transferencia,884.74,2,1.5,Rosario
+N00076,C0255,2026-03-17,ropa ,tarjeta,"3064,47",4,0.46,Córdoba
+N00077,C0179,2026-05-07,HOGAR,efectivo,1388.72,2,0.5,Córdoba
 N00078,C0183,2026-03-07,Electrónica,tarjeta,1308.99,2,0.59,Mendoza
-N00079,C0190,2026-05-28,hogar ,transferencia,"$1,739.52",2,0.39,Rosario
-N00080,C0231,2026-04-09,ROPA,tarjeta,"1509,03",3,0.28,Córdoba
-N00081,C0275,2026-04-09,Electrónica,transferencia,484.79,1,0.18,Mendoza
-N00082,C0232,2026-04-12,electrónica ,transferencia,"$1,631.21",1,0.13,Córdoba
-N00083,C0053,2026-05-12,ELECTRÓNICA,tarjeta,"1913,57",2,0.13,Rosario
+N00079,C0190,2026-05-28,hogar ,transferencia,1739.52,2,0.39,Rosario
+N00080,C0231,2026-04-09,ROPA,tarjeta,1509.03,3,0.28,Córdoba
+N00081,C0275,2026-04-09,Electrónica,transferencia,"484,79",1,0.18,Mendoza
+N00082,C0232,2026-04-12,electrónica ,transferencia,1631.21,1,0.13,Córdoba
+N00083,C0053,2026-05-12,ELECTRÓNICA,tarjeta,1913.57,2,0.13,Rosario
 N00084,C0256,2026-05-22,Ropa,tarjeta,3415.66,3,0.25,Buenos Aires
-N00085,C0089,2026-04-20,hogar ,transferencia,"$1,475.82",1,0.6,Córdoba
+N00085,C0089,2026-04-20,hogar ,transferencia,1475.82,1,0.6,Córdoba
 N00086,C0225,2026-05-12,HOGAR,tarjeta,"3744,93",4,0.0,Rosario
 N00087,C0246,2026-03-23,Ropa,tarjeta,4864.64,4,0.12,Córdoba
-N00088,C0393,2026-04-01,ropa ,tarjeta,$714.83,3,0.11,Buenos Aires
-N00089,C0150,2026-03-31,HOGAR,tarjeta,"3038,12",4,0.43,Buenos Aires
+N00088,C0393,2026-04-01,ropa ,tarjeta,714.83,3,0.11,Buenos Aires
+N00089,C0150,2026-03-31,HOGAR,tarjeta,3038.12,4,0.43,Buenos Aires
 N00090,C0112,2026-03-17,Hogar,transferencia,2362.62,4,1.5,Córdoba
-N00091,C0268,2026-04-27,hogar ,tarjeta,"$7,917.17",4,0.27,Mendoza
-N00092,C0156,2026-05-25,HOGAR,tarjeta,"1215,57",1,0.09,Córdoba
+N00091,C0268,2026-04-27,hogar ,tarjeta,"7917,17",4,0.27,Mendoza
+N00092,C0156,2026-05-25,HOGAR,tarjeta,1215.57,1,0.09,Córdoba
 N00093,C0365,2026-04-04,Electrónica,transferencia,1766.06,4,0.24,Rosario
-N00094,C0346,2026-03-30,electrónica ,transferencia,"$1,695.04",2,0.06,Mendoza
-N00095,C0350,2026-05-03,ROPA,tarjeta,"1483,47",2,0.32,Rosario
-N00096,C0298,2026-04-22,Ropa,transferencia,3574.60,4,0.06,Rosario
-N00097,C0393,2026-04-20,hogar ,tarjeta,$686.02,2,0.47,Mendoza
-N00098,C0158,2026-04-06,ROPA,tarjeta,"840,51",1,0.34,Buenos Aires
+N00094,C0346,2026-03-30,electrónica ,transferencia,1695.04,2,0.06,Mendoza
+N00095,C0350,2026-05-03,ROPA,tarjeta,1483.47,2,0.32,Rosario
+N00096,C0298,2026-04-22,Ropa,transferencia,"3574,60",4,0.06,Rosario
+N00097,C0393,2026-04-20,hogar ,tarjeta,686.02,2,0.47,Mendoza
+N00098,C0158,2026-04-06,ROPA,tarjeta,840.51,1,0.34,Buenos Aires
 N00099,C0329,2026-05-29,Libros,efectivo,1720.40,3,0.43,Rosario
-N00100,C0224,2026-03-06,hogar ,efectivo,"$1,598.37",2,0.25,Córdoba
+N00100,C0224,2026-03-06,hogar ,efectivo,1598.37,2,0.25,Córdoba
 N00101,C0013,2026-04-03,LIBROS,tarjeta,"1661,45",4,0.23,Buenos Aires
 N00102,C0354,2026-04-25,Libros,tarjeta,1364.20,3,0.06,Buenos Aires
-N00103,C0108,2026-03-25,electrónica ,tarjeta,"$4,279.58",3,0.31,Mendoza
-N00104,C0095,2026-03-13,HOGAR,tarjeta,"1343,17",4,0.31,Córdoba
+N00103,C0108,2026-03-25,electrónica ,tarjeta,4279.58,3,0.31,Mendoza
+N00104,C0095,2026-03-13,HOGAR,tarjeta,1343.17,4,0.31,Córdoba
 N00105,C0194,2026-05-02,Ropa,tarjeta,704.58,2,0.28,Córdoba
-N00106,C0057,2026-05-05,ropa ,tarjeta,$643.21,1,0.44,Buenos Aires
-N00107,C0391,2026-03-05,HOGAR,efectivo,"805,46",2,0.5,Rosario
+N00106,C0057,2026-05-05,ropa ,tarjeta,"643,21",1,0.44,Buenos Aires
+N00107,C0391,2026-03-05,HOGAR,efectivo,805.46,2,0.5,Rosario
 N00108,C0351,2026-05-14,Ropa,efectivo,748.36,2,0.45,Rosario
-N00109,C0293,2026-03-11,libros ,tarjeta,$712.16,1,0.09,Córdoba
+N00109,C0293,2026-03-11,libros ,tarjeta,712.16,1,0.09,Córdoba
 N00110,C0153,2026-05-27,HOGAR,transferencia,,3,0.37,Buenos Aires
-N00111,C0063,2026-05-17,Hogar,tarjeta,345.44,1,0.05,Buenos Aires
-N00112,C0157,2026-04-13,ropa ,tarjeta,"$2,527.95",1,1.5,Buenos Aires
-N00113,C0264,2026-05-24,HOGAR,tarjeta,"3586,58",4,0.23,Mendoza
+N00111,C0063,2026-05-17,Hogar,tarjeta,"345,44",1,0.05,Buenos Aires
+N00112,C0157,2026-04-13,ropa ,tarjeta,2527.95,1,-0.2,Buenos Aires
+N00113,C0264,2026-05-24,HOGAR,tarjeta,3586.58,4,0.23,Mendoza
 N00114,C0120,2026-05-08,Ropa,transferencia,1637.67,4,0.08,Córdoba
-N00115,C0287,2026-03-02,hogar ,tarjeta,"$1,745.83",2,0.52,Córdoba
+N00115,C0287,2026-03-02,hogar ,tarjeta,1745.83,2,0.52,Córdoba
 N00116,C0010,2026-04-09,ROPA,efectivo,"3847,04",4,0.37,Rosario
 N00117,C0213,2026-04-06,Hogar,transferencia,1269.49,1,0.21,Rosario
-N00118,C0161,2026-04-18,ropa ,tarjeta,$612.38,1,0.02,Córdoba
-N00119,C0104,2026-05-14,ROPA,tarjeta,"5019,16",4,0.32,Córdoba
+N00118,C0161,2026-04-18,ropa ,tarjeta,612.38,1,0.02,Córdoba
+N00119,C0104,2026-05-14,ROPA,tarjeta,5019.16,4,0.32,Córdoba
 N00120,C0146,2026-04-05,Electrónica,transferencia,707.19,4,0.55,Rosario
-N00121,C0181,2026-05-14,ropa ,efectivo,"$1,339.02",4,0.36,Córdoba
-N00122,C0337,2026-05-12,HOGAR,transferencia,"739,90",1,0.58,Rosario
+N00121,C0181,2026-05-14,ropa ,efectivo,"1339,02",4,0.36,Córdoba
+N00122,C0337,2026-05-12,HOGAR,transferencia,739.90,1,0.58,Rosario
 N00123,C0036,2026-05-09,Ropa,tarjeta,2472.23,3,0.08,Córdoba
-N00124,C0081,2026-04-03,ropa ,transferencia,"$1,103.18",3,0.34,Mendoza
-N00125,C0011,2026-04-27,ELECTRÓNICA,tarjeta,"3149,24",4,0.48,Mendoza
-N00126,C0003,2026-04-06,Ropa,efectivo,886.83,2,0.32,Buenos Aires
-N00127,C0042,2026-04-29,electrónica ,transferencia,"$1,111.12",2,0.05,Córdoba
-N00128,C0050,2026-03-12,HOGAR,transferencia,"3884,37",3,0.35,Rosario
+N00124,C0081,2026-04-03,ropa ,transferencia,1103.18,3,0.34,Mendoza
+N00125,C0011,2026-04-27,ELECTRÓNICA,tarjeta,3149.24,4,0.48,Mendoza
+N00126,C0003,2026-04-06,Ropa,efectivo,"886,83",2,0.32,Buenos Aires
+N00127,C0042,2026-04-29,electrónica ,transferencia,1111.12,2,0.05,Córdoba
+N00128,C0050,2026-03-12,HOGAR,transferencia,3884.37,3,0.35,Rosario
 N00129,C0260,2026-04-01,Ropa,tarjeta,4803.52,4,0.37,Córdoba
-N00130,C0133,2026-05-20,ropa ,transferencia,$347.90,0,0.44,Córdoba
+N00130,C0133,sin fecha,ropa ,transferencia,347.90,1,0.44,Córdoba
 N00131,C0086,2026-03-04,ROPA,tarjeta,"669,10",2,0.46,Buenos Aires
 N00132,C0361,2026-04-02,Electrónica,tarjeta,1018.29,2,0.46,Rosario
-N00133,C0055,2026-04-12,electrónica ,tarjeta,$653.68,1,0.4,Córdoba
-N00134,C0216,2026-03-09,ELECTRÓNICA,efectivo,"433,71",1,0.13,Rosario
+N00133,C0055,2026-04-12,electrónica ,tarjeta,653.68,1,0.4,Córdoba
+N00134,C0216,2026-03-09,ELECTRÓNICA,efectivo,433.71,1,0.13,Rosario
 N00135,C0365,2026-04-20,Hogar,transferencia,5232.85,4,0.24,Córdoba
 N00136,C0067,2026-03-20,ropa ,tarjeta,,1,0.47,Buenos Aires
-N00137,C0351,2026-04-08,ELECTRÓNICA,efectivo,"866,06",1,0.57,Rosario
+N00137,C0351,2026-04-08,ELECTRÓNICA,efectivo,866.06,1,0.57,Rosario
 N00138,C0043,2026-03-23,Electrónica,tarjeta,292.00,1,0.05,Córdoba
-N00139,C0142,2026-04-10,hogar ,tarjeta,"$4,261.39",3,0.32,Mendoza
+N00139,C0142,2026-04-10,hogar ,tarjeta,4261.39,3,0.32,Mendoza
 N00140,C0345,2026-04-13,LIBROS,tarjeta,,1,0.19,Rosario
-N00141,C0041,2026-04-04,Electrónica,transferencia,2287.66,2,0.14,Buenos Aires
-N00142,C0138,2026-03-23,libros ,tarjeta,"$4,883.40",4,0.3,Mendoza
-N00143,C0072,2026-04-27,ROPA,tarjeta,"2008,68",4,0.36,Rosario
-N00144,C0266,2026-04-17,Ropa,transferencia,6085.63,4,-0.2,Rosario
-N00145,C0193,2026-05-26,ropa ,tarjeta,"$1,915.24",3,0.47,Rosario
+N00141,C0041,2026-04-04,Electrónica,transferencia,"2287,66",2,0.14,Buenos Aires
+N00142,C0138,2026-03-23,libros ,tarjeta,4883.40,4,0.3,Mendoza
+N00143,C0072,2026-04-27,ROPA,tarjeta,2008.68,4,0.36,Rosario
+N00144,C0266,2026-04-17,Ropa,transferencia,6085.63,4,0.01,Rosario
+N00145,C0193,2026-05-26,ropa ,tarjeta,1915.24,3,0.47,Rosario
 N00146,C0154,2026-04-27,ELECTRÓNICA,transferencia,"1385,38",2,0.49,Rosario
 N00147,C0245,2026-04-26,Ropa,tarjeta,829.39,1,0.58,Córdoba
-N00148,C0313,2026-05-26,ropa ,transferencia,"$10,555.70",2,0.11,Córdoba
-N00149,C0217,2026-04-08,ELECTRÓNICA,transferencia,"6375,24",4,0.36,Rosario
+N00148,C0313,2026-05-26,ropa ,transferencia,10555.70,2,0.11,Córdoba
+N00149,C0217,2026-04-08,ELECTRÓNICA,transferencia,6375.24,4,0.36,Rosario
 N00150,C0383,2026-03-28,Ropa,transferencia,1049.15,1,0.26,Buenos Aires
-N00151,C0252,2026-05-03,ropa ,tarjeta,"$99,999.00",4,0.2,Córdoba
-N00152,C0276,2026-05-01,ROPA,transferencia,"2920,84",4,0.34,Rosario
+N00151,C0252,2026-05-03,ropa ,tarjeta,"1469,93",4,0.2,Córdoba
+N00152,C0276,2026-05-01,ROPA,transferencia,2920.84,4,0.34,Rosario
 N00153,C0276,2026-05-22,Libros,tarjeta,1568.33,4,0.47,Rosario
-N00154,C0071,2026-05-01,ropa ,efectivo,"$2,269.96",2,0.01,Buenos Aires
-N00155,C0128,2026-05-24,HOGAR,tarjeta,"1457,46",2,0.58,Buenos Aires
-N00156,C0357,2026-05-27,Hogar,tarjeta,1280.95,4,0.49,Buenos Aires
-N00157,C0185,2026-05-24,electrónica ,transferencia,"$2,804.63",4,0.45,Mendoza
-N00158,C0012,2026-03-26,ROPA,transferencia,"382,94",1,0.46,Rosario
+N00154,C0071,2026-05-01,ropa ,efectivo,2269.96,2,0.01,Buenos Aires
+N00155,C0128,2026-05-24,HOGAR,tarjeta,1457.46,2,0.58,Buenos Aires
+N00156,C0357,2026-05-27,Hogar,tarjeta,"1280,95",4,0.49,Buenos Aires
+N00157,C0185,2026-05-24,electrónica ,transferencia,2804.63,4,0.45,Mendoza
+N00158,C0012,2026-03-26,ROPA,transferencia,382.94,1,0.46,Rosario
 N00159,C0328,2026-04-20,Electrónica,tarjeta,2935.36,4,0.23,Buenos Aires
-N00160,C0219,2026-04-19,electrónica ,efectivo,"$1,522.17",4,0.45,Rosario
+N00160,C0219,2026-04-19,electrónica ,efectivo,1522.17,4,0.45,Rosario
 N00161,C0005,2026-04-05,ELECTRÓNICA,efectivo,"2708,53",4,0.23,Córdoba
 N00162,C0238,2026-03-26,Ropa,transferencia,0.00,4,0.54,Rosario
-N00163,C0111,2026-04-02,ropa ,tarjeta,"$1,285.19",2,0.11,Rosario
-N00164,C0227,2026-05-07,LIBROS,transferencia,"2063,62",4,0.18,Mendoza
+N00163,C0111,2026-04-02,ropa ,tarjeta,1285.19,2,0.11,Rosario
+N00164,C0227,2026-05-07,LIBROS,transferencia,2063.62,4,0.18,Mendoza
 N00165,C0016,2026-05-12,Electrónica,tarjeta,2277.29,3,0.33,Córdoba
-N00166,C0072,2026-03-08,hogar ,tarjeta,"$4,185.84",4,0.19,Córdoba
-N00167,C0011,2026-05-05,ELECTRÓNICA,efectivo,"647,73",2,0.25,Mendoza
+N00166,C0072,2026-03-08,hogar ,tarjeta,"4185,84",4,0.19,Córdoba
+N00167,C0011,2026-05-05,ELECTRÓNICA,efectivo,647.73,2,0.25,Mendoza
 N00168,C0085,2026-03-23,Libros,efectivo,2363.83,3,0.3,Buenos Aires
-N00169,C0179,2026-05-09,electrónica ,efectivo,"$4,698.57",3,0.51,Buenos Aires
-N00170,C0121,2026-04-24,ELECTRÓNICA,tarjeta,"3862,89",4,0.31,Rosario
-N00171,C0203,2026-04-12,Libros,tarjeta,2762.34,4,0.22,Mendoza
-N00172,C0069,2026-03-21,hogar ,tarjeta,"$2,016.21",2,0.15,Buenos Aires
-N00173,C0107,2026-03-22,ROPA,tarjeta,"2677,76",3,0.25,Córdoba
+N00169,C0179,2026-05-09,electrónica ,efectivo,4698.57,3,0.51,Buenos Aires
+N00170,C0121,2026-04-24,ELECTRÓNICA,tarjeta,3862.89,4,0.31,Rosario
+N00171,C0203,2026-04-12,Libros,tarjeta,"2762,34",4,0.22,Mendoza
+N00172,C0069,2026-03-21,hogar ,tarjeta,2016.21,2,0.15,Buenos Aires
+N00173,C0107,2026-03-22,ROPA,tarjeta,2677.76,3,0.25,Córdoba
 N00174,C0200,2026-03-09,Ropa,tarjeta,3256.65,3,0.31,Mendoza
-N00175,C0051,2026-04-03,hogar ,tarjeta,$356.95,2,0.45,Buenos Aires
+N00175,C0051,2026-04-03,hogar ,tarjeta,356.95,2,0.45,Buenos Aires
 N00176,C0036,2026-04-28,HOGAR,transferencia,"969,27",4,0.07,Córdoba
 N00177,C0116,2026-03-26,Electrónica,transferencia,,1,0.13,Mendoza
-N00178,C0258,2026-03-01,electrónica ,transferencia,$250.03,1,0.23,Rosario
-N00179,C0263,2026-03-05,HOGAR,transferencia,"2590,52",3,0.22,Rosario
+N00178,C0258,2026-03-01,electrónica ,transferencia,250.03,1,0.23,Rosario
+N00179,C0263,2026-03-05,HOGAR,transferencia,2590.52,3,0.22,Rosario
 N00180,C0393,2026-04-10,Electrónica,tarjeta,1587.28,3,0.24,Córdoba
-N00181,C0302,2026-05-02,hogar ,tarjeta,"$1,392.38",4,0.48,Buenos Aires
-N00182,C0063,2026-03-22,ROPA,transferencia,"834,87",1,0.19,Buenos Aires
+N00181,C0302,2026-05-02,hogar ,tarjeta,"1392,38",4,0.48,Buenos Aires
+N00182,C0063,2026-03-22,ROPA,transferencia,834.87,1,0.19,Buenos Aires
 N00183,C0041,2026-05-07,Libros,tarjeta,2273.97,3,0.3,Mendoza
-N00184,C0042,2026-04-17,hogar ,transferencia,"$10,488.32",4,0.37,Córdoba
-N00185,C0124,2026-05-05,HOGAR,tarjeta,"443,13",1,0.14,Buenos Aires
-N00186,C0392,2026-03-16,Ropa,tarjeta,3392.15,2,0.43,Rosario
-N00187,C0269,2026-05-19,ropa ,transferencia,"$2,509.12",3,0.33,Córdoba
-N00188,C0346,2026-04-22,ELECTRÓNICA,efectivo,"865,65",2,0.27,Rosario
+N00184,C0042,2026-04-17,hogar ,transferencia,10488.32,4,0.37,Córdoba
+N00185,C0124,2026-05-05,HOGAR,tarjeta,443.13,1,0.14,Buenos Aires
+N00186,C0392,2026-03-16,Ropa,tarjeta,"3392,15",2,0.43,Rosario
+N00187,C0269,2026-05-19,ropa ,transferencia,2509.12,3,0.33,Córdoba
+N00188,C0346,2026-04-22,ELECTRÓNICA,efectivo,865.65,2,0.27,Rosario
 N00189,C0232,2026-05-25,Hogar,efectivo,1118.24,1,0.49,Córdoba
-N00190,C0131,2026-05-04,hogar ,tarjeta,"$3,843.06",4,0.15,Mendoza
+N00190,C0131,2026-05-04,hogar ,tarjeta,3843.06,4,0.15,Mendoza
 N00191,C0001,2026-05-18,ELECTRÓNICA,tarjeta,"2723,28",4,0.53,Buenos Aires
 N00192,C0114,2026-05-03,Hogar,transferencia,790.84,1,0.34,Buenos Aires
-N00193,C0000,2026-05-27,hogar ,tarjeta,$902.44,2,0.37,Buenos Aires
-N00194,C0330,2026-05-07,ROPA,tarjeta,"1555,47",4,0.53,Rosario
+N00193,C0000,2026-05-27,hogar ,tarjeta,902.44,2,0.37,Buenos Aires
+N00194,C0330,2026-05-07,ROPA,tarjeta,1555.47,4,0.53,Rosario
 N00195,C0064,2026-05-02,Electrónica,efectivo,3269.03,3,0.49,Buenos Aires
-N00196,C0124,2026-05-01,hogar ,transferencia,"$1,150.08",2,0.36,Córdoba
-N00197,C0255,2026-05-21,ELECTRÓNICA,efectivo,"1262,81",2,0.45,Rosario
+N00196,C0124,2026-05-01,hogar ,transferencia,"1150,08",2,0.36,Córdoba
+N00197,C0255,2026-05-21,ELECTRÓNICA,efectivo,1262.81,2,0.45,Rosario
 N00198,C0390,2026-05-20,Hogar,tarjeta,2393.46,3,0.26,Mendoza
-N00199,C0321,2026-05-10,electrónica ,tarjeta,$790.32,1,0.33,Rosario
+N00199,C0321,2026-05-10,electrónica ,tarjeta,790.32,1,0.33,Rosario
