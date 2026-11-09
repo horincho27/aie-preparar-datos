@@ -2,13 +2,65 @@
 
 Nimbus es una tienda ficticia. Vas a preparar sus pedidos para estimar si un pedido nuevo se devolverá. En los pedidos históricos, `returned=1` significa que se devolvió y `returned=0` que no. Construye tu preparación desde cero con el agente de IA y usa la balanza para observar el efecto de cada cambio. La práctica termina cuando revisas tus resultados en clase.
 
-## Empieza en Codespaces
+## Empieza en VS Code local (Windows)
 
-1. Abre **Code → Codespaces → Create codespace**. El entorno instala las dependencias de `requirements.txt`.
-2. Abre [notebooks/practica.ipynb](notebooks/practica.ipynb), selecciona el kernel de Python 3.12 y ejecuta la primera celda. Esa celda lee y une los datos crudos. Las demás celdas de código están vacías para que trabajes en ellas. [Selector de kernel de VS Code](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management)
-3. Abre la extensión de IA de la academia. Pide al agente que lea [CONTEXTO.md](CONTEXTO.md) y trabaje contigo en la etapa en curso.
+Abre la carpeta del repositorio en VS Code. Necesitas Python 3.12 y las extensiones **Python** y **Jupyter** de VS Code. Los datos ya están en el repositorio.
 
-Si trabajas en tu equipo, crea un entorno de Python 3.12, actívalo y ejecuta `python -m pip install -r requirements.txt` desde la raíz. Selecciona ese entorno como kernel del notebook. Los datos ya están en el repositorio.
+1. Abre una terminal de PowerShell en la carpeta principal del proyecto. Crea y activa el entorno.
+
+   ```powershell
+   py -3.12 -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+   Si PowerShell bloquea la activación por permisos, ejecuta `Set-ExecutionPolicy -Scope Process Bypass` en esa terminal y vuelve a ejecutar `.\.venv\Scripts\Activate.ps1`. El cambio solo dura hasta que cierres esa terminal. [Políticas de ejecución de PowerShell](https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy)
+
+2. Instala las dependencias en la misma terminal, con `.venv` activo.
+
+   ```powershell
+   python -m pip install -r requirements.txt
+   ```
+
+3. Abre [notebooks/practica.ipynb](notebooks/practica.ipynb). En la esquina superior derecha, elige **Seleccionar kernel → Entornos de Python → .venv**. Si ya aparece otro kernel, haz clic en su nombre y elige **Seleccionar otro kernel**. [Selector de kernel de VS Code](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management)
+4. Ejecuta la primera celda. Esa celda lee y une los datos crudos. Las demás celdas de código están vacías para que trabajes en ellas.
+
+### Alternativa en Codespaces
+
+Abre **Code → Codespaces → Create codespace**. El entorno instala las dependencias de `requirements.txt`. Abre [notebooks/practica.ipynb](notebooks/practica.ipynb), selecciona el kernel de Python 3.12 y ejecuta la primera celda.
+
+## Primer mensaje para tu agente
+
+Abre la extensión de IA de la academia y copia el mensaje de tu etapa. Ejecuta tú el código de exploración en una celda nueva y pega el resultado en el chat antes de pedir cambios.
+
+**Etapa 0 · Primera medición**
+
+```text
+Lee CONTEXTO.md. Estoy en la etapa 0. Dame el código para ver cómo llegan los datos antes de medir.
+```
+
+**Etapa 1 · Limpieza**
+
+```text
+Lee CONTEXTO.md. Estoy en la etapa 1. Dame el código para explorar los datos antes de proponer cambios.
+```
+
+**Etapa 2 · La columna que hace trampa**
+
+```text
+Lee CONTEXTO.md. Estoy en la etapa 2. Dame el código para comparar las columnas de los pedidos históricos y nuevos.
+```
+
+**Etapa 3 · El dato que falta**
+
+```text
+Lee CONTEXTO.md. Estoy en la etapa 3. Dame el código para ver cuántos pedidos tienen el teléfono vacío.
+```
+
+**Etapa 4 · Ajuste y transformación**
+
+```text
+Lee CONTEXTO.md. Estoy en la etapa 4. Dame el código para revisar los tipos de las columnas y cuántos precios están vacíos.
+```
 
 ## Cómo usar la balanza
 
