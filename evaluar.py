@@ -9,8 +9,9 @@ import pandas as pd
 from sklearn.base import clone
 
 from medir import (
-    PREPARACION, ULTIMA, _entradas, _revisar_matriz, cargar_datos,
-    campos_exclusivos, leer_historial,
+    PREPARACION, ULTIMA, _alias_exclusivos, _configurar_salida_utf8,
+    _diagnostico, _entradas, _revisar_matriz, cargar_datos, campos_exclusivos,
+    leer_historial,
 )
 
 
@@ -128,7 +129,13 @@ def _etapa_4(info, crudo, crudos_nuevos):
 
 def evaluar(etapa=4):
     """Revisa desde la etapa 0 hasta la indicada y señala la primera pendiente."""
+    _configurar_salida_utf8()
     try:
+        if etapa == 0:
+            crudo, crudos_nuevos = cargar_datos()
+            reservadas = _alias_exclusivos(crudo, crudos_nuevos)
+            _diagnostico(crudo, "Histórico crudo", reservadas)
+            _diagnostico(crudos_nuevos, "Producción cruda", reservadas)
         historial = leer_historial()
         _comprueba(historial, "Haz una primera medición con medir.")
         print("Etapa 0 · Hay una medición registrada.")

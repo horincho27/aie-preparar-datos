@@ -5,6 +5,7 @@ import csv
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+import sys
 
 import joblib
 import numpy as np
@@ -32,6 +33,13 @@ class ProblemaMedicion(ValueError):
     """Un problema que el alumno puede revisar con su agente."""
 
 
+def _configurar_salida_utf8():
+    # La consola puede usar otra codificación. El notebook ya admite texto Unicode.
+    reconfigurar = getattr(sys.stdout, "reconfigure", None)
+    if callable(reconfigurar):
+        reconfigurar(encoding="utf-8")
+
+
 def cargar_datos():
     """Devuelve pedidos históricos y nuevos unidos con los datos de clientes."""
     clientes = pd.read_json(RAIZ / "data/raw/customers.json", convert_dates=False)
@@ -47,6 +55,13 @@ def cargar_datos():
 def campos_exclusivos(historico, nuevos):
     """Devuelve los campos que no forman parte del esquema de un pedido nuevo."""
     return historico.columns.difference([*nuevos.columns, "returned"], sort=False).tolist()
+
+
+def _alias_exclusivos(historico, nuevos):
+    return {
+        campo: f"campo exclusivo del histórico {i}"
+        for i, campo in enumerate(campos_exclusivos(historico, nuevos), 1)
+    }
 
 
 def _nombre_visible(columna, reservadas):
@@ -265,16 +280,13 @@ def _resumen(fila, conjunto):
 
 def medir(preparar, etapa=0, transformador=None):
     """Mide la tabla devuelta por preparar y registra una medición si puede entrenar."""
+    _configurar_salida_utf8()
     reservadas = {}
     try:
         if etapa not in range(5):
             raise ProblemaMedicion("Indica una etapa entre 0 y 4.")
         crudo, crudos_nuevos = cargar_datos()
-        exclusivas = campos_exclusivos(crudo, crudos_nuevos)
-        reservadas = {
-            campo: f"campo exclusivo del histórico {i}"
-            for i, campo in enumerate(exclusivas, 1)
-        }
+        reservadas = _alias_exclusivos(crudo, crudos_nuevos)
         # Usamos la misma función en las dos tablas y cada llamada recibe su propia copia.
         historico = preparar(crudo.copy())
         nuevos = preparar(crudos_nuevos.copy())
@@ -330,7 +342,7 @@ def medir(preparar, etapa=0, transformador=None):
             # El verificador mira el resultado al repetir la llamada y al ocultar el futuro.
             repetible = historico.equals(preparar(crudo.copy()))
             sin_informacion = crudo.copy()
-            for columna in exclusivas:
+            for columna in reservadas:
                 sin_informacion[columna] = pd.NA
             sin_futuro = historico.equals(preparar(sin_informacion))
 
@@ -365,7 +377,7 @@ def medir(preparar, etapa=0, transformador=None):
     for conjunto, nombre in (("prueba", "Prueba"), ("produccion", "Producción")):
         print(f"{nombre} · Antes {_resumen(anterior, conjunto)}. Ahora {_resumen(fila, conjunto)}.")
     if (
-        etapa == 1 and anterior and set(entradas).intersection(exclusivas)
+        etapa == 1 and anterior and set(entradas).intersection(reservadas)
         and fila["f1_prueba"] > fila["f1_produccion"]
         and all(fila[c] == float(anterior[c]) for c in ("f1_prueba", "f1_produccion"))
     ):
